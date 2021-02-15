@@ -19,6 +19,11 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
+    <link
+      href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
     {% block custom_style %} {% endblock %}
@@ -30,11 +35,17 @@
     <script src="{% static 'semantic/semantic.min.js' %}"></script>
   </head>
   <body>
-    <div class="ui right sidebar inverted vertical menu">
-      <a class="item" href="">Home</a>
-      <a class="item" href="/gallery">Gallery</a>
-      <a class="item" href="/interview">Interview</a>
-      <a class="item" href="/joinus">Join us</a>
+    <div class="ui right sidebar inverted vertical icon menu">
+      <a class="item" href=""><i class="big home icon sidebar_icon"></i>Home</a>
+      <a class="item" href="/gallery"
+        ><i class="big images icon sidebar_icon"></i>Gallery</a
+      >
+      <a class="item" href="/interview"
+        ><i class="big user icon sidebar_icon"></i>Interview</a
+      >
+      <a class="item" href="/joinus"
+        ><i class="big users icon sidebar_icon"></i>Join us</a
+      >
     </div>
     <div class="pusher">
       <div class="entire_wrap">
@@ -42,15 +53,15 @@
           <div class="container">
             <div class="navbar_wrap">
               <div class="navbar_logo">
-                <a href="#"
+                <a href=""
                   ><img class="logo_img" src="{% static 'images/logo.png' %}" />
                 </a>
               </div>
               <div class="navbar_menulist">
-                <a class="navbar_menu" href="#">Home</a>
-                <a class="navbar_menu" href="#">Gallery</a>
-                <a class="navbar_menu" href="#">Interview</a>
-                <a class="navbar_menu" href="#">Join us</a>
+                <a class="navbar_menu" href="">Home</a>
+                <a class="navbar_menu" href="/gallery">Gallery</a>
+                <a class="navbar_menu" href="/interview">Interview</a>
+                <a class="navbar_menu" href="/joinus">Join us</a>
               </div>
               <i class="fas fa-bars fa-2x menu_icon"></i>
             </div>
@@ -60,20 +71,25 @@
         <div class="main_footer">
           <div class="container">
             <div class="footer_menulist">
-              <a class="footer_menu" href="#"
+              <a
+                class="footer_menu"
+                href="https://www.instagram.com/pirogramming_official/"
                 ><i class="xi-instagram footer_menuicon"></i>Instagram</a
               >
-              <a class="footer_menu" href="#"
+              <a
+                class="footer_menu"
+                href="https://ko-kr.facebook.com/p.rogramming3k/"
                 ><i class="xi-facebook-official footer_menuicon"></i>Facebook</a
               >
-              <a class="footer_menu" href="#"
+              <a class="footer_menu" href="http://pf.kakao.com/_xdHxdXK"
                 ><i class="xi-kakaotalk footer_menuicon"></i>카카오톡
                 플러스친구</a
               >
-              <a class="footer_menu" href="#"
-                ><i class="xi-call footer_menuicon"></i>010-0000-0000</a
+              <a class="footer_menu"
+                ><i class="xi-call footer_menuicon"></i>010-2122-7842 (13기 회장
+                김우영)</a
               >
-              <a class="footer_menu" href="#"
+              <a class="footer_menu"
                 >© Pirogramming. 2021 All rights reserved
               </a>
             </div>
@@ -83,7 +99,7 @@
                 class="footer_mobileMenu"
                 data-inverted=""
                 data-tooltip="Instagram"
-                href="#"
+                href="https://www.instagram.com/pirogramming_official/"
               >
                 <i class="xi-instagram xi-2x"></i>
               </a>
@@ -91,21 +107,21 @@
                 class="footer_mobileMenu"
                 data-inverted=""
                 data-tooltip="Facebook"
-                href="#"
+                href="https://ko-kr.facebook.com/p.rogramming3k/"
                 ><i class="xi-facebook-official xi-2x"></i
               ></a>
               <a
                 class="footer_mobileMenu"
                 data-inverted=""
                 data-tooltip="카카오톡 플러스친구"
-                href="#"
+                href="http://pf.kakao.com/_xdHxdXK"
                 ><i class="xi-kakaotalk xi-2x"></i
               ></a>
               <a
                 class="footer_mobileMenu"
                 data-inverted=""
-                data-tooltip="Call"
-                href="#"
+                data-tooltip="010-2122-7842 (13기 회장
+                김우영)"
                 ><i class="xi-call xi-2x"></i
               ></a>
               <a
@@ -113,7 +129,6 @@
                 data-inverted=""
                 data-tooltip="© Pirogramming. 2021 All rights reserved"
                 data-position="top right"
-                href="#"
                 ><i class="xi-copyright xi-2x"></i>
               </a>
             </div>
@@ -126,6 +141,34 @@
       $(".menu_icon").click(function () {
         $(".ui.sidebar").sidebar("toggle");
       });
+
+      const initMenuActive = () => {
+        document.querySelectorAll(".navbar_menu").forEach((menu) => {
+          if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+          }
+        });
+      };
+
+      const menuActive = () => {
+        initMenuActive();
+        document.querySelectorAll(".navbar_menu").forEach((menu) => {
+          let menuname = menu.textContent.toLowerCase();
+          if (menuname === "join us") {
+            menuname = "joinus";
+          }
+          let pathname = window.location.pathname;
+
+          if (pathname === "/" && menuname === "home") {
+            menu.classList.add("active");
+          }
+
+          if (pathname.includes(menuname)) {
+            menu.classList.add("active");
+          }
+        });
+      };
+      $(document).ready(menuActive);
     </script>
   </body>
 </html>
