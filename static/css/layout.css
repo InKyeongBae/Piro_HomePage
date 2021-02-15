@@ -4,9 +4,21 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .entire_wrap {
   padding-top: 80px;
   overflow: auto;
+}
+
+.active {
+  border-bottom: 3px solid #ffffff;
+}
+
+.sidebar_icon {
+  padding-bottom: 35px;
 }
 
 .main_navbar {
@@ -14,6 +26,7 @@
   color: white;
   width: 100%;
   height: 80px;
+  /* height: 9vh; */
   position: fixed;
   top: 0;
 }
@@ -24,17 +37,12 @@
   height: 100%;
 }
 
-.main_container {
-  width: 80%;
-  margin: 0 auto;
-  height: 100%;
-}
-
 .navbar_wrap {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 80px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .navbar_logo {
@@ -56,7 +64,7 @@
 .navbar_menu {
   display: inline-block;
   color: white;
-  width: 53px;
+  /* width: 53px; */
   height: 80px;
   line-height: 80px;
   font-weight: bold;
@@ -64,7 +72,8 @@
 }
 
 .navbar_menu:hover {
-  color: grey;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
 }
 
 .navbar_menu:not(:last-of-type) {
@@ -77,7 +86,26 @@
 
 .main_content {
   min-width: 1280px;
-  min-height: 77vh;
+}
+
+.main_banner {
+  height: 329px;
+  background-color: #151515;
+}
+
+.banner_titlewrap {
+  color: #ffffff;
+  padding-top: 171px;
+}
+
+.banner_maintitle {
+  font-size: 60px;
+  font-family: Druk Wide Bold;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 .menu_icon {
@@ -88,6 +116,7 @@
   min-width: 1280px;
   background: #2f2f2f;
   height: 130px;
+  /* height: 14vh; */
   color: #ababab;
 }
 
@@ -110,12 +139,19 @@
   font-weight: 500;
 }
 
+.footer_menu:hover {
+  /* color: #ababab; */
+  color: #ffffff;
+}
+
 .footer_menu:nth-child(3) {
   min-width: 138px;
 }
+
 .footer_menu:nth-child(4) {
   min-width: 126px;
 }
+
 .footer_menu:nth-child(5) {
   min-width: 272px;
 }
@@ -130,11 +166,13 @@
   align-items: center;
 }
 
+.footer_mobileMenu:hover {
+  /* color: #ababab; */
+  color: #ffffff;
+}
+
 /* 미디어 쿼리 */
 @media screen and (max-width: 768px) {
-  .main_container {
-    width: 90%;
-  }
   .navbar_wrap {
     justify-content: space-between;
   }
@@ -149,6 +187,10 @@
   }
   .main_content {
     min-width: 0;
+  }
+
+  .banner_maintitle {
+    font-size: 30px;
   }
 
   .main_footer {
