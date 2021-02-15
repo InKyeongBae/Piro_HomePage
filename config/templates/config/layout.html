@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>피로그래밍</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="../../static/css/layout.css" />
+    <script
+      src="https://code.jquery.com/j
+      query-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="semantic/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="ui right sidebar inverted vertical menu">
+      <a class="item">Home</a>
+      <a class="item">Gallery</a>
+      <a class="item">Interview</a>
+      <a class="item">Join us</a>
+    </div>
+    <div class="pusher">
+      <div class="entire_wrap">
+        <div class="main_navbar">
+          <div class="container">
+            <div class="navbar_wrap">
+              <div class="navbar_logo">
+                <a href="#"
+                  ><img class="logo_img" src="../../static/images/logo.png" />
+                </a>
+              </div>
+              <div class="navbar_menulist">
+                <a class="navbar_menu" href="#">Home</a>
+                <a class="navbar_menu" href="#">Gallery</a>
+                <a class="navbar_menu" href="#">Interview</a>
+                <a class="navbar_menu" href="#">Join us</a>
+              </div>
+              <i class="fas fa-bars fa-2x menu_icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="main_content">
+          <!-- main_content_block -->
+        </div>
+        <div class="main_footer">
+          <div class="container">
+            <div class="footer_menulist">
+              <a class="footer_menu" href="#"
+                ><i class="xi-instagram footer_menuicon"></i>Instagram</a
+              >
+              <a class="footer_menu" href="#"
+                ><i class="xi-facebook-official footer_menuicon"></i>Facebook</a
+              >
+              <a class="footer_menu" href="#"
+                ><i class="xi-kakaotalk footer_menuicon"></i>카카오톡
+                플러스친구</a
+              >
+              <a class="footer_menu" href="#"
+                ><i class="xi-call footer_menuicon"></i>010-0000-0000</a
+              >
+              <a class="footer_menu" href="#"
+                >© Pirogramming. 2021 All rights reserved
+              </a>
+            </div>
+            <!-- 모바일 전용 Footer menu-->
+            <div class="footer_mobileMenulist">
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="Instagram"
+                href="#"
+              >
+                <i class="xi-instagram xi-2x"></i>
+              </a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="Facebook"
+                href="#"
+                ><i class="xi-facebook-official xi-2x"></i
+              ></a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="카카오톡 플러스친구"
+                href="#"
+                ><i class="xi-kakaotalk xi-2x"></i
+              ></a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="Call"
+                href="#"
+                ><i class="xi-call xi-2x"></i
+              ></a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="© Pirogramming. 2021 All rights reserved"
+                data-position="top right"
+                href="#"
+                ><i class="xi-copyright xi-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".menu_icon").click(function () {
+        $(".ui.sidebar").sidebar("toggle");
+      });
+    </script>
+  </body>
+</html>
