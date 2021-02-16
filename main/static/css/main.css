@@ -23,12 +23,81 @@
   visibility: hidden;
 }
 
+.main_company {
+  height: 450px;
+  background-color: #f1f1f1;
+}
+
+.company_wrap {
+  padding-top: 83px;
+  text-align: center;
+}
+
+.banner_title {
+  font-family: Druk Wide Bold;
+  font-size: 26px;
+}
+
+.company_images {
+  padding-top: 80px;
+  /* padding: 80px 160px 0 160px; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.company_imagewrap:nth-child(3) .company_image {
+  width: 320px;
+}
+
+.company_imagewrap:nth-child(4) .company_image {
+  width: 200px;
+  padding-bottom: 2vh;
+}
+
+.company_image {
+  width: 100px;
+  height: 100px;
+}
+
 /* 미디어 쿼리 */
 @media screen and (max-width: 768px) {
-  .main_container {
-    width: 80%;
+  .black_background {
+    display: none;
   }
   .banner_subtitle {
-    font-size: 10px;
+    /* font-size:10px; */
+    font-size: 2vw;
+  }
+
+  .banner_title {
+    font-size: 4.5vw;
+  }
+
+  .main_company {
+    /* height: 40vh; */
+    height: auto;
+  }
+
+  .company_wrap {
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+  }
+
+  .company_images {
+    padding-top: 2.5vh;
+  }
+
+  .company_image {
+    width: 10vw;
+    /* width: 50px; */
+  }
+  .company_imagewrap:nth-child(3) .company_image {
+    width: 35vw;
+    /* width: 170px; */
+  }
+
+  .company_imagewrap:nth-child(4) .company_image {
+    width: 20vw;
+    /* width: 100px; */
   }
 }

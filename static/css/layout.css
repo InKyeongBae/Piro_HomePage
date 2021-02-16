@@ -185,12 +185,20 @@ a {
   .menu_icon:hover {
     cursor: pointer;
   }
+
+  .main_banner {
+    height: 30vh;
+  }
+
+  .banner_titlewrap {
+    padding-top: 10vh;
+  }
   .main_content {
     min-width: 0;
   }
 
   .banner_maintitle {
-    font-size: 30px;
+    font-size: 5.8vw;
   }
 
   .main_footer {
