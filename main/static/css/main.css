@@ -1,0 +1,148 @@
+.main_container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.banner_subtitle {
+  font-size: 20px;
+  font-family: SFProDisplay;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+}
+
+.black_background {
+  height: 171px;
+  background-color: #151515;
+}
+
+.black_background span {
+  visibility: hidden;
+}
+
+.main_company {
+  height: auto;
+  background-color: #f1f1f1;
+}
+
+.company_wrap {
+  padding-top: 83px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.banner_title {
+  font-family: Druk Wide Bold;
+  font-size: 26px;
+}
+
+.company_images {
+  padding-top: 80px;
+  /* padding: 80px 160px 0 160px; */
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
+
+/* 집토스 로고 */
+.four.column.row:first-child .company_imagewrap:nth-child(3) .company_image {
+  width: 200px;
+}
+/* 매스프레소 로고 */
+.four.column.row:first-child .company_imagewrap:nth-child(4) .company_image {
+  padding-bottom: 25px;
+}
+/* skt 로고 */
+.four.column.row:nth-child(2) .company_imagewrap:nth-child(4) .company_image {
+  padding-bottom: 30px;
+}
+
+/* 플레이리스트 로고 */
+.four.column.row:nth-child(3) .company_imagewrap:nth-child(3) .company_image {
+  width: 50px;
+}
+
+/* 어니스트펀드 로고 */
+.four.column.row:nth-child(3) .company_imagewrap:nth-child(4) .company_image {
+  width: 210px;
+}
+
+.company_image {
+  width: 150px;
+  height: 100px;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  .black_background {
+    display: none;
+  }
+  .banner_subtitle {
+    /* font-size:10px; */
+    font-size: 2vw;
+  }
+
+  .banner_title {
+    font-size: 4.5vw;
+  }
+
+  .main_company {
+    /* height: 40vh; */
+    height: auto;
+  }
+
+  .company_wrap {
+    padding-top: 6vh;
+    padding-bottom: 3vh;
+  }
+
+  .company_images {
+    padding-top: 2.5vh;
+  }
+
+  .four.column.row:first-child {
+    padding-bottom: 0;
+  }
+
+  .four.column.row:not(:first-child) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -3vh;
+  }
+
+  .company_image {
+    width: 12vw;
+    /* width: 50px; */
+  }
+
+  /* 스노우 로고 */
+  .four.column.row:first-child .company_imagewrap:first-child .company_image {
+    width: 9vw;
+  }
+
+  /* 콴다 로고 */
+  .four.column.row:first-child .company_imagewrap:nth-child(2) .company_image {
+    width: 9.5vw;
+  }
+
+  /* 매스프레소 로고 */
+  .four.column.row:first-child .company_imagewrap:nth-child(4) .company_image {
+    padding-bottom: 0;
+  }
+  /* skt 로고 */
+  .four.column.row:nth-child(2) .company_imagewrap:nth-child(4) .company_image {
+    padding-bottom: 1.5vh;
+  }
+
+  /* 집토스 로고 */
+  .four.column.row:first-child .company_imagewrap:nth-child(3) .company_image {
+    /* width: 14vh; */
+  }
+
+  /* 플레이리스트 로고 */
+  .four.column.row:nth-child(3) .company_imagewrap:nth-child(3) .company_image {
+    width: 4.5vw;
+  }
+}

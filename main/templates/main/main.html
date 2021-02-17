@@ -1,0 +1,108 @@
+{% extends 'layout.html' %} {% load static %}{% block custom_style %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />{% endblock %}
+<!--  -->
+{% block subtitle %}
+<div class="banner_subtitle">비전공자를 위한 웹 프로그래밍 동아리</div>
+{% endblock subtitle %} {% block titlename %}PIROGRAMMNG{% endblock titlename %}
+{% block contents %}
+<div class="black_background"><span>메인 배너용 추가 검정배경</span></div>
+<div class="main_company">
+  <div class="main_container">
+    <div class="company_wrap">
+      <div class="banner_title">PIROGRAMMER</div>
+      <div class="company_images">
+        <div class="ui grid">
+          <div class="four column row">
+            <a
+              href="https://snowcorp.com/ko_KR/"
+              class="column company_imagewrap"
+              ><img
+                src="{% static 'images/snow.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a href="https://qanda.ai/ko" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/qanda.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a href="https://ziptoss.com/" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/home.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a href="https://mathpresso.com/ko" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/mathpresso.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+          </div>
+          <div class="four column row">
+            <a href="https://naver.com" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/naver.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a
+              href="https://dunamu.com/views/01_main_ko.html"
+              class="column company_imagewrap"
+              ><img
+                src="{% static 'images/dunamu.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a href="https://lawandgood.com/" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/lawgood.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a
+              href="https://www.sktelecom.com/index.html"
+              class="column company_imagewrap"
+              ><img
+                src="{% static 'images/skt.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+          </div>
+          <div class="four column row">
+            <a href="https://coupang.com" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/coupang.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a href="https://dailyshot.co/" class="column company_imagewrap"
+              ><img
+                src="{% static 'images/dailyshot.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a
+              href="https://tv.naver.com/playlist/home"
+              class="column company_imagewrap"
+              ><img
+                src="{% static 'images/playlist.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+            <a
+              href="https://www.honestfund.kr/"
+              class="column company_imagewrap"
+              ><img
+                src="{% static 'images/honestfund.svg' %}"
+                class="company_image"
+                alt="company_logo"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock contents %}
