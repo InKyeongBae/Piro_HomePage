@@ -28,7 +28,7 @@
   background-color: #f1f1f1;
 }
 
-.company_wrap {
+.company_wrap, .interview_wrap {
   padding-top: 83px;
   padding-bottom: 60px;
   text-align: center;
@@ -74,6 +74,26 @@
   height: 100px;
 }
 
+/* main_interview */
+.main_interview {
+  background-color: #151515;
+}
+.interview_wrap > .banner_title {
+  color: #4DFF53;
+}
+.interview_images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 80px;
+}
+.interview_item {
+  width: 220px;
+  height: 300px;
+  border: 1px solid #dddddd;
+}
+
+
 /* 미디어 쿼리 */
 @media screen and (max-width: 768px) {
   .black_background {
@@ -98,7 +118,7 @@
     padding-bottom: 3vh;
   }
 
-  .company_images {
+  .company_images, .interview_images {
     padding-top: 2.5vh;
   }
 
@@ -144,5 +164,15 @@
   /* 플레이리스트 로고 */
   .four.column.row:nth-child(3) .company_imagewrap:nth-child(3) .company_image {
     width: 4.5vw;
+  }
+
+  /* main_interview */
+  .interview_images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .interview_imagewrap {
+    margin-bottom: 4vh;
   }
 }
