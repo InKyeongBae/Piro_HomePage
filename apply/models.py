@@ -3,59 +3,56 @@ from django.db import models
 # Create your models here.
 
 class Season(models.Model):
-    season_num = models.IntegerField()
-    poster = models.ImageField(upload_to="season/poster")
+    season_num = models.IntegerField(verbose_name="모집 기수")
+    poster = models.ImageField(upload_to="season/poster", verbose_name="모집 포스터")
 
-    doc_screening_info = models.TextField()
-    doc_screening_start = models.DateTimeField()
-    doc_screening_end = models.DateTimeField()
+    session_start_date = models.DateField(verbose_name="세션 시작일")
+    session_end_date = models.DateField(verbose_name="세션 종료일")
+
+    meeting_date1 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 1")
+    meeting_date2 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 2")
+    meeting_date3 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 3")
+
+    doc_screening_info = models.TextField(verbose_name="서류전형 관련 추가 안내", null=True, blank=True)
+    doc_screening_start = models.DateTimeField(verbose_name="서류전형 지원 시작일시")
+    doc_screening_end = models.DateTimeField(verbose_name="서류전형 지원 마감일시")
+
+    question1 = models.TextField(verbose_name="서류전형 문제1")
+    question2 = models.TextField(verbose_name="서류전형 문제2")
+    question3 = models.TextField(verbose_name="서류전형 문제3")
+    question4 = models.TextField(verbose_name="서류전형 문제4")
+    question5 = models.TextField(verbose_name="서류전형 문제5")
+    coding_test = models.TextField(verbose_name="코딩테스트 문제")
     
-    doc_meeting_info = models.TextField()
-    doc_result_start = models.DateTimeField()
-    doc_result_end = models.DateTimeField()
+    doc_meeting_info = models.TextField(verbose_name="면접전형 관련 추가 안내", null=True, blank=True)
+    doc_result_start = models.DateTimeField(verbose_name="서류전형 결과 발표 시작일시")
+    doc_result_end = models.DateTimeField(verbose_name="서류전형 결과 발표 마감일시")
 
-    meeting_date1 = models.DateField(null=True, blank=True)
-    meeting_date2 = models.DateField(null=True, blank=True)
-    meeting_date3 = models.DateField(null=True, blank=True)
+    final_info = models.TextField(null=True, blank=True, verbose_name="최종발표 관련 추가 안내")
+    final_result_open = models.DateTimeField(verbose_name="최종발표 시작일시")
+    final_result_close = models.DateTimeField(verbose_name="최종발표 마감일시")
 
-    final_result_open = models.DateTimeField()
-    final_result_close = models.DateTimeField()
-
-    workshop_date = models.DateTimeField()
-    workshop_place = models.CharField(max_length=50)
-
-    question1 = models.TextField()
-    question2 = models.TextField()
-    question3 = models.TextField()
-    question4 = models.TextField()
-    question5 = models.TextField()
-    coding_test = models.TextField()
+    workshop_date = models.DateTimeField(verbose_name="워크샵 요일")
+    workshop_place = models.CharField(max_length=50, verbose_name="워크샵 장소")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.season_num
+        return f'{self.season_num}기 모집'
 
 class Image(models.Model):
-    img = models.ImageField(upload_to="image")
+    img = models.ImageField(upload_to="image", verbose_name="코딩테스트 문제 관련 이미지")
 
-    season = models.ForeignKey(Season, related_name="images", on_delete=models.CASCADE)
+    season = models.ForeignKey(Season, related_name="images", on_delete=models.CASCADE, verbose_name="모집 기수")
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.img.created_at
+        return f'{self.season.season_num}-코딩테스트 문제 사진'
 
 class Applicant(models.Model):
-
-    season = models.ForeignKey(Season, related_name="applicants", on_delete=models.CASCADE)
-    if season is not None:
-        date1 = season.meeting_date1
-        
-
-
 
     GRADE = (
         ("1학년", "1학년"),
@@ -76,40 +73,55 @@ class Applicant(models.Model):
         (6, "6학기"),
     )
 
-    if season is not None:
-        AVAIL_TIME = (
-            (f"{season.meeting_date1.month}월 {season.meeting_date1.day}일 {season.meeting_date1.strftime('%A')} 오전", f"{season.meeting_date1.month}월 {season.meeting_date1.day}일 {season.meeting_date1.strftime('%A')} 오전")
-            (f"{season.meeting_date1.month}월 {season.meeting_date1.day}일 {season.meeting_date1.strftime('%A')} 오후", f"{season.meeting_date1.month}월 {season.meeting_date1.day}일 {season.meeting_date1.strftime('%A')} 오후"),
-            (f"{season.meeting_date2.month}월 {season.meeting_date2.day}일 {season.meeting_date2.strftime('%A')} 오전", f"{season.meeting_date2.month}월 {season.meeting_date2.day}일 {season.meeting_date2.strftime('%A')} 오전"),
-            (f"{season.meeting_date2.month}월 {season.meeting_date2.day}일 {season.meeting_date2.strftime('%A')} 오후", f"{season.meeting_date2.month}월 {season.meeting_date2.day}일 {season.meeting_date2.strftime('%A')} 오후"),
-        )
+    YES_NO = (
+        ("예", "예"),
+        ("아니오", "아니오"),
+    )
 
-    name = models.CharField(max_length=20)
-    school = models.CharField(max_length=20)
-    major = models.CharField(max_length=20)
-    major_grade = models.CharField(max_length=10, choices=GRADE)
-    sub_major = models.CharField(max_length=20, null=True, blank=True)
-    sub_major_semester = models.IntegerField(null=True, blank=True, choices=SEMESTER)
-    address = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=15)
+    AGREE_NOR = (
+        ("동의", "동의"),
+        ("비동의", "비동의"),
+    )
 
-    avail_meeting_time = models.CharField(max_length=30, choices=AVAIL_TIME)
+    KNOW_ROOT = (
+        ("sns", "피로그래밍 공식 SNS(예 - 페이스북, 인스타그램)"),
+        ("cafe community", "네이버 카페/동아리 관련 커뮤니티(예 - 스펙업, 링커리어, 캠퍼스픽"),
+        ("everytime", "에브리타임"),
+        ("friends", "지인의 소개"),
+        ("others", "기타"),
+    )
 
-    answer1 = models.TextField()
-    answer2 = models.TextField()
-    answer3 = models.TextField()
-    answer4 = models.TextField()
-    answer5 = models.TextField()
-    code = models.TextField()
+    name = models.CharField(max_length=20, verbose_name="이름")
 
-    participate_check = models.BooleanField()
-    workshop_check = models.BooleanField()
-    info_check = models.BooleanField()
-    deposit_check = models.BooleanField()
-    know_check = models.CharField(max_length=50, choices=KNOW_ROOT)
+    doc_pass=models.BooleanField(default=False, verbose_name="서류전형 합격")
+    meeting_date_time = models.DateTimeField(null=True, blank=True, verbose_name="지원자 면접시간")
 
-    doc_pass=models.BooleanField(default=False)
-    final_pass=models.BooleanField(default=False)
+    final_pass=models.BooleanField(default=False, verbose_name="최종 합격")
+
+    school = models.CharField(max_length=20, verbose_name="학교")
+    major = models.CharField(max_length=20, verbose_name="전공")
+    major_grade = models.CharField(max_length=10, choices=GRADE, verbose_name="전공 학년")
+    sub_major = models.CharField(max_length=20, null=True, blank=True, verbose_name="부전공")
+    sub_major_semester = models.IntegerField(null=True, blank=True, choices=SEMESTER, verbose_name="부전공 이수 학기")
+    address = models.CharField(max_length=100, verbose_name="거주지")
+    phone_number = models.CharField(max_length=15, verbose_name="전화번호")
+
+    avail_meeting_time = models.CharField(max_length=30, verbose_name="면접 가능 일자")
+
+    answer1 = models.TextField(verbose_name="서류전형 문제1 답안")
+    answer2 = models.TextField(verbose_name="서류전형 문제2 답안")
+    answer3 = models.TextField(verbose_name="서류전형 문제3 답안")
+    answer4 = models.TextField(verbose_name="서류전형 문제4 답안")
+    answer5 = models.TextField(verbose_name="서류전형 문제5 답안")
+    code = models.TextField(verbose_name="코딩테스트 답안")
+
+    participate_check = models.CharField(max_length=10, choices=YES_NO, verbose_name="모든 일정 참석 여부")
+    workshop_check = models.CharField(max_length=10, choices=YES_NO, verbose_name="워크샵 참석 여부")
+    info_check = models.CharField(max_length=10, choices=AGREE_NOR, verbose_name="개인정보 이용 동의")
+    deposit_check = models.CharField(max_length=10, choices=AGREE_NOR, verbose_name="보증금 납부 동의")
+    know_check = models.CharField(max_length=50, choices=KNOW_ROOT, verbose_name="피로그래밍 알게 된 경로")
+
+    season = models.ForeignKey(Season, related_name="applicants", on_delete=models.CASCADE, verbose_name="모집기수")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -117,4 +129,14 @@ class Applicant(models.Model):
     def __str__(self):
         return self.name
 
-
+    def add_meeting_date(self, date1, date2):
+        if date1 is not None:
+            t1 = (f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오전", f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오전")
+            t2 = (f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오후", f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오후")
+            self.AVAIL_TIME += t1
+            self.AVAIL_TIME += t2
+        if date2 is not None:
+            t3 = (f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오전", f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오전")
+            t4 = (f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오후", f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오후")
+            self.AVAIL_TIME += t3
+            self.AVAIL_TIME += t4
