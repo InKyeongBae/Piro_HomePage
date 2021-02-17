@@ -92,6 +92,44 @@
   height: 300px;
   border: 1px solid #dddddd;
 }
+.interview_imagewrap {
+  position: relative;
+}
+.interview_imagewrap:hover .caption{
+  opacity: 1;
+}
+.caption{
+  cursor: pointer;
+  position: absolute;
+  top: 50%; left:50%; 
+  transform:translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition:all 0.45s ease-in-out;
+  -moz-transition:all 0.45s ease-in-out;
+  -o-transition:all 0.45s ease-in-out;
+  -ms-transition:all 0.45s ease-in-out;
+  transition:all 0.45s ease-in-out;
+}
+.blur{
+  background-color: rgba(0,0,0,0.65);
+  width: 220px;
+  height: 300px;
+  z-index: 5;
+  position: absolute;
+  top: 50%; left:50%; 
+  transform:translate(-50%, -50%);
+}
+.caption-text{
+  z-index: 10;
+  color: #fff;
+  position: absolute;
+  top: 50%; left:50%; 
+  transform:translate(-50%, -50%);
+  width: 220px;
+  height: 300px;
+  text-align: center;
+  top:100px;
+}
 
 
 /* 미디어 쿼리 */
