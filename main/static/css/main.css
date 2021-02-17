@@ -23,6 +23,43 @@
   visibility: hidden;
 }
 
+
+/* main_desc */
+.main_desc {
+  margin-top: 80px;
+}
+
+.desc_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.desc_item{
+  width: 303px;
+}
+
+.desc_img {
+  width: 303px;
+  height: 202px;
+  border: 1px solid #dddddd;
+}
+
+.desc_title {
+  font-family: 'Noto Sans KR';
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 30px;
+}
+
+.desc_content {
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/* main_company */
 .main_company {
   height: auto;
   background-color: #f1f1f1;
@@ -83,11 +120,24 @@
     /* font-size:10px; */
     font-size: 2vw;
   }
-
   .banner_title {
     font-size: 4.5vw;
   }
 
+  /* main_desc */
+  .desc_wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .desc_item {
+    margin-bottom: 6vh;
+  }
+  .desc_title {
+    margin-top: 0px;
+    margin-bottom: 1vh;
+  }
+
+  /* main_company */
   .main_company {
     /* height: 40vh; */
     height: auto;
