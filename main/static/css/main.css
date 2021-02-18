@@ -73,6 +73,88 @@
   font-weight: bold;
 }
 
+/* main_plan */
+.main_plan {
+  background-color: #2d2d2d;
+}
+.plan_wrap {
+  padding-top: 83px;
+  padding-bottom: 160px;
+  text-align: center;
+}
+
+.plan_wrap > .banner_title {
+  color: #4DFF53;
+}
+
+.plan_content {
+  padding-top: 123px;
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+}
+.progress_bar {
+  height: 15px;
+  background-color: #3e3e3e;
+}
+
+.points {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: -50%;
+}
+
+.plan_point {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.steps {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 56px;
+}
+
+.step_wrap {
+  width: 33%;
+}
+
+.step_content {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.step_wrap:first-child .step_content{
+  margin-left: 0;
+}
+.step_wrap:last-child .step_content{
+  margin-right: 0;
+}
+
+.step_title {
+  font-family: 'Noto Sans KR';
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+.step_month {
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  color: #ffffff;
+}
+
+
 /* main_repo */
 .main_repo {
   background-color: #151515;
@@ -236,9 +318,39 @@
     margin-bottom: 1vh;
   }
 
+  /* main_plan */
+  .plan_wrap {
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+  }
+
+  .plan_content {
+    padding-top: 4vh;
+  }
+  .progress_bar {
+    height: 3vw;
+  }
+
+  .plan_point {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .step_title {
+    font-size: 3.5vw;
+  }
+  .step_month {
+    font-size: 2vw;
+  }
+
   /* main_repo */
   .repo_content {
     padding-top: 2.5vh;
+  }
+
+  .repo_image {
+    width: 35vw;
+    height: 35vw;
   }
 
   /* main_company */
