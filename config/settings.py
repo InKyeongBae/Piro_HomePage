@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'interview',
     'apply',
     'main',
-    'apply',
 ]
 
 MIDDLEWARE = [

@@ -2,12 +2,10 @@ from django.db import models
 
 class Asking(models.Model) : 
     generation = models.IntegerField(default=0, verbose_name="기수")
-    question = models.TextField(null=True, blank=True)
-
-class Answer(models.Model) :
-    name = models.CharField(max_length=50, null=True, blank=True, verbose_name="이름")
-    asking = models.ForeignKey(Asking, on_delete=models.CASCADE, null=True, related_name="answer",  verbose_name="질문")
-    answer = models.TextField(null=True, blank=True)
+    question_num = models.IntegerField(default=1, verbose_name="질문 번호")
+    question = models.TextField(null=True, blank=True,verbose_name="질문(내용)")
+    def __str__(self):
+        return '{}. {}'.format(self.question_num, self.question)
 
 class Interviewee(models.Model) :
     MAJOR_CHOICES = {
@@ -24,5 +22,11 @@ class Interviewee(models.Model) :
 
     def __str__(self):
         return '{}기 {}'.format(self.generation, self.name)
+
+
+class Answer(models.Model) :
+    interviewee = models.ForeignKey(Interviewee, on_delete=models.CASCADE, null=True, related_name="interviewee",  verbose_name="답변자")
+    asking = models.ForeignKey(Asking, on_delete=models.CASCADE, null=True, related_name="answer",  verbose_name="질문")
+    answer = models.TextField(null=True, blank=True, verbose_name="답변(내용)")
 
 
