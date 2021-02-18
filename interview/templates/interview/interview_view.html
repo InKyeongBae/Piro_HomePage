@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/interview_view.css' %}" />
+    <title>피로그래밍</title>
+    <meta charset="UTF-8" />
+    
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'semantic/semantic.min.css' %}"
+    />
+
+    <link
+        href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
+        rel="stylesheet"
+        type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" 
+        rel="stylesheet"
+    >
+
+<div class="interview-containor">
+    <div class="intro-containor">
+        {% for i in interview %}
+            {% if i.image %}
+                <div class="intro-image"><img src="{{ i.image.url }}" alt=""></div>
+            {% endif %}
+                <div class="intro-name">{{ i.generation }}기 {{ i.name }}님의 <span>인터뷰</span></div>
+                <div class="intro-major">{{ i.major }}</div>
+            
+            
+        {% endfor %}
+    </div>
+    <div class="answer-containor">
+        {% for i in interview %}
+            {% if i.asking.question1 != None %}
+                <div class="question"><span>Q1 </span>{{ i.asking.question1 }}</div>
+                <div class="answer"> {{ i.answer1|linebreaks }}</div>
+            {% endif %}
+            {% if i.asking.question2 != None %}
+                <div class="question"><span>Q2 </span>{{ i.asking.question2 }}</div>
+                <div class="answer"> {{ i.answer2|linebreaks }}</div>
+            {% endif %}
+            {% if i.asking.question3 != None %}
+                <div class="question"><span>Q3 </span>{{ i.asking.question3 }}</div>
+                <div class="answer"> {{ i.answer3|linebreaks }}</div>
+            {% endif %}
+            {% if i.asking.question4 != None %}
+                <div class="question"><span>Q4 </span>{{ i.asking.question4 }}</div>
+                <div class="answer"> {{ i.answer4|linebreaks }}</div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+    
+</div>
+<div class="interview-footer">
+    <span class="piro-footer"
+        >© Pirogramming. 2021 All rights reserved
+    </span>
+</div>
+</html>
