@@ -120,7 +120,7 @@ def applyConfirm(request):
             return redirect(reverse('apply:applyconfirm'))
 
 
-def resultConfrim(request, cat):
+def resultConfirm(request, cat):
     result_category = str(cat)
     season = Season.objects.order_by('-created_at').first()
     now = timezone.now()
@@ -146,16 +146,17 @@ def resultConfrim(request, cat):
                     return redirect("")
                 result = applicant.doc_pass
                 meeting_datetime = applicant.meeting_date_time
-                #meeting_place = applicant.season.meeting_place
+                meeting_place = applicant.season.meeting_place
                 ctx = {
                     'result_category':result_category,
                     'season_number':season.season_num,
                     'name':name,
                     'result':result,
                     'meeting_datetime':meeting_datetime,
+                    'meeting_place':meeting_place,
                     'meeting_info':season.doc_meeting_info,
                 }
-                return render(request, 'apply/result_page.html', ctx)
+                return render(request, 'apply/doc_result_page.html', ctx)
 
     elif result_category == "fianl" and (now>=season.final_result_open and now<=season.final_result_close):
         if request.method == 'GET':
@@ -164,7 +165,7 @@ def resultConfrim(request, cat):
                 'result_category':result_category,
                 'form':form,
             }
-            return render(request, 'apply/doc_result_confirm.html', ctx)
+            return render(request, 'apply/result_confirm.html', ctx)
         else:
             form = ApplyConfirm(request.POST)
             name = form.cleaned_data.get('name')

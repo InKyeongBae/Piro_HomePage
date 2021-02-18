@@ -9,6 +9,7 @@ class Season(models.Model):
     session_start_date = models.DateField(verbose_name="세션 시작일")
     session_end_date = models.DateField(verbose_name="세션 종료일")
 
+    meeting_place = models.CharField(max_length=50, null=True, blank=True)
     meeting_date1 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 1")
     meeting_date2 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 2")
     meeting_date3 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 3")
