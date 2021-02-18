@@ -24,15 +24,30 @@
 }
 
 
-/* main_desc */
-.main_desc {
+/* main_intro */
+.content_wrap {
   margin-top: 80px;
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6rem;
 }
 
+.intro_content_1 {
+  margin-bottom: 30px;
+}
+
+.keyword {
+  font-family: Druk Wide Bold;
+  font-size: 14px;
+}
+
+/* main_desc */
 .desc_wrap {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-bottom: 62px;
 }
 
 .desc_item{
@@ -65,7 +80,7 @@
   background-color: #f1f1f1;
 }
 
-.company_wrap, .interview_wrap {
+.intro_wrap, .company_wrap, .interview_wrap {
   padding-top: 83px;
   padding-bottom: 60px;
   text-align: center;
@@ -182,13 +197,24 @@
     font-size: 4.5vw;
   }
 
+  /* main_intro */
+  .intro_wrap > .content_wrap {
+    margin-top: 2.5vh;
+  }
+
   /* main_desc */
   .desc_wrap {
     display: flex;
     flex-direction: column;
+    padding-bottom: 0px;
   }
   .desc_item {
     margin-bottom: 6vh;
+    width: 100%;
+  }
+  .desc_img {
+    width: 100%;
+    /* height: auto; */
   }
   .desc_title {
     margin-top: 0px;
@@ -201,7 +227,7 @@
     height: auto;
   }
 
-  .company_wrap {
+  .company_wrap, .interview_wrap {
     padding-top: 6vh;
     padding-bottom: 3vh;
   }
