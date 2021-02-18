@@ -4,7 +4,11 @@ from django.urls import reverse
 from django.http import HttpResponse
 # Create your views here.
 def interview_list(request):
-    return HttpResponse('인터뷰이 등록 성공')
+    interviewees = Interviewee.objects.all()
+    data={
+        'interviewees' : interviewees
+    }
+    return render(request, 'interview/interview.html',data )
 
 def interviewee_create(request):
     if request.method == 'POST':
