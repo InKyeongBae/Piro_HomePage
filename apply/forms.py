@@ -47,3 +47,19 @@ class ApplyForm(forms.ModelForm):
         "code":"코드 입력란",
         "know_check":"피로그래밍 알게 된 경로",
         }
+
+class ApplyConfirm(forms.Form):
+    name = forms.CharField(max_length=15, label="이름")
+    phone_number = forms.CharField(max_length=15, label="전화번호")
+
+    def clean_phone_number(self):
+        pn = self.cleaned_data.get('phone_number')
+        tmplist = list(pn)
+        print(tmplist)
+        for i in tmplist:
+            if i<'0' or i>'9':
+                tmplist.remove(i)
+        print(tmplist)
+        pn = ''.join(tmplist)
+        return pn
+

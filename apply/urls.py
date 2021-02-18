@@ -4,5 +4,6 @@ app_name = 'apply'
 
 urlpatterns = [
     path('main', main, name="main" ),
-    path('application', apply, name="application")
+    path('application', apply, name="application"),
+    path('applyconfirm', applyConfirm, name="applyconfirm")
 ]

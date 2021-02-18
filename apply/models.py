@@ -133,10 +133,10 @@ class Applicant(models.Model):
         if date1 is not None:
             t1 = (f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오전", f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오전")
             t2 = (f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오후", f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오후")
-            self.AVAIL_TIME += t1
-            self.AVAIL_TIME += t2
+            # self.AVAIL_TIME += t1
+            # self.AVAIL_TIME += t2
         if date2 is not None:
             t3 = (f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오전", f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오전")
             t4 = (f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오후", f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오후")
-            self.AVAIL_TIME += t3
-            self.AVAIL_TIME += t4
+            # self.AVAIL_TIME += t3
+            # self.AVAIL_TIME += t4
