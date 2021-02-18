@@ -6,11 +6,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- web font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- favicon option -->
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta
@@ -89,19 +92,26 @@
     />
     <link rel="manifest" href="{% static 'images/favicons/manifest.json' %}" />
 
+    <!-- fontAwesome icon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     />
+
+    <!-- semantic UI framework css -->
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'semantic/semantic.min.css' %}"
     />
+
+    <!-- Xeicon -->
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
+
+    <!-- Druk Wide Bold web font -->
     <link
       href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
       rel="stylesheet"
@@ -115,11 +125,15 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+
+    <!-- semantic UI framework javascript -->
     <script src="{% static 'semantic/semantic.min.js' %}"></script>
   </head>
   <body>
     <div class="ui right sidebar inverted vertical icon menu">
-      <a class="item" href=""><i class="big home icon sidebar_icon"></i>Home</a>
+      <a class="item" href="{% url 'main:main_page' %}"
+        ><i class="big home icon sidebar_icon"></i>Home</a
+      >
       <a class="item" href="/gallery"
         ><i class="big images icon sidebar_icon"></i>Gallery</a
       >
@@ -136,14 +150,20 @@
           <div class="container">
             <div class="navbar_wrap">
               <div class="navbar_logo">
-                <a href=""
+                <a href="{% url 'main:main_page' %}"
                   ><img class="logo_img" src="{% static 'images/logo.png' %}" />
                 </a>
               </div>
               <div class="navbar_menulist">
-                <a class="navbar_menu" href=""{% url 'main:main_page' %}"">Home</a>
+                <a class="navbar_menu" href="{% url 'main:main_page' %}"
+                  >Home</a
+                >
                 <a class="navbar_menu" href="/gallery">Gallery</a>
-                <a class="navbar_menu" href="{% url 'interview:interview_list' %}">Interview</a>
+                <a
+                  class="navbar_menu"
+                  href="{% url 'interview:interview_list' %}"
+                  >Interview</a
+                >
                 <a class="navbar_menu" href="/joinus">Join us</a>
               </div>
               <i class="fas fa-bars fa-2x menu_icon"></i>
