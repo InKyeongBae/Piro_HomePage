@@ -86,7 +86,7 @@ class Applicant(models.Model):
 
     KNOW_ROOT = (
         ("sns", "피로그래밍 공식 SNS(예 - 페이스북, 인스타그램)"),
-        ("cafe community", "네이버 카페/동아리 관련 커뮤니티(예 - 스펙업, 링커리어, 캠퍼스픽"),
+        ("cafe community", "네이버 카페/동아리 관련 커뮤니티(예 - 스펙업, 링커리어, 캠퍼스픽)"),
         ("everytime", "에브리타임"),
         ("friends", "지인의 소개"),
         ("others", "기타"),
@@ -107,7 +107,7 @@ class Applicant(models.Model):
     address = models.CharField(max_length=100, verbose_name="거주지")
     phone_number = models.CharField(max_length=15, verbose_name="전화번호")
 
-    avail_meeting_time = models.CharField(max_length=30, verbose_name="면접 가능 일자")
+    avail_meeting_time = models.CharField(max_length=300, verbose_name="면접 가능 일자")
 
     answer1 = models.TextField(verbose_name="서류전형 문제1 답안")
     answer2 = models.TextField(verbose_name="서류전형 문제2 답안")

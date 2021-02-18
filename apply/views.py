@@ -143,22 +143,27 @@ def resultConfirm(request, cat):
                 except ObjectDoesNotExist:
                     msg = "지원자 명단에 없습니다. 지원 여부를 다시한번 확인해주세요"
                     messages.error(request, msg)
-                    return redirect("")
-                result = applicant.doc_pass
-                meeting_datetime = applicant.meeting_date_time
-                meeting_place = applicant.season.meeting_place
-                ctx = {
-                    'result_category':result_category,
-                    'season_number':season.season_num,
-                    'name':name,
-                    'result':result,
-                    'meeting_datetime':meeting_datetime,
-                    'meeting_place':meeting_place,
-                    'meeting_info':season.doc_meeting_info,
-                }
-                return render(request, 'apply/doc_result_page.html', ctx)
+                    return redirect("/")
+            else:
+                msg = "오류가 생겼습니다 재시도 해주세요"
+                messages.error(request, msg)
+                return redirect("/")
+                
+            result = applicant.doc_pass
+            meeting_datetime = applicant.meeting_date_time
+            meeting_place = applicant.season.meeting_place
+            ctx = {
+                'result_category':result_category,
+                'season_number':season.season_num,
+                'name':name,
+                'result':result,
+                'meeting_datetime':meeting_datetime,
+                'meeting_place':meeting_place,
+                'meeting_info':season.doc_meeting_info,
+            }
+            return render(request, 'apply/doc_result_page.html', ctx)
 
-    elif result_category == "fianl" and (now>=season.final_result_open and now<=season.final_result_close):
+    elif result_category == "final" and (now>=season.final_result_open and now<=season.final_result_close):
         if request.method == 'GET':
             form = ApplyConfirm()
             ctx = {
@@ -168,18 +173,22 @@ def resultConfirm(request, cat):
             return render(request, 'apply/result_confirm.html', ctx)
         else:
             form = ApplyConfirm(request.POST)
-            name = form.cleaned_data.get('name')
-            phone_number = form.cleaned_data.get('phone_number')
-            try:
-                applicant = Applicant.objects.get(season__season_num = season.season_num, name=name, phone_number=phone_number)
-            except ObjectDoesNotExist:
-                msg = "지원자 명단에 없습니다. 지원 여부를 다시한번 확인해주세요"
+            if form.is_valid():
+                name = form.cleaned_data.get('name')
+                phone_number = form.cleaned_data.get('phone_number')
+                try:
+                    applicant = Applicant.objects.get(season__season_num = season.season_num, name=name, phone_number=phone_number)
+                except ObjectDoesNotExist:
+                    msg = "지원자 명단에 없습니다. 지원 여부를 다시한번 확인해주세요"
+                    messages.error(request, msg)
+                    return redirect("/")
+            else:
+                msg = "오류가 생겼습니다 재시도 해주세요"
                 messages.error(request, msg)
-                return redirect("")
+                return redirect("/")
             result = applicant.final_pass
             workshop_date = season.workshop_date
             workshop_place = season.workshop_place
-            #meeting_place = applicant.season.meeting_place
             ctx = {
                 'result_category':result_category,
                 'season_number':season.season_num,

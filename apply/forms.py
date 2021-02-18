@@ -2,7 +2,7 @@ from django import forms
 from apply.models import *
 
 class ApplyForm(forms.ModelForm):
-    
+
     class Meta:
         model = Applicant
         fields = ("participate_check", 
@@ -47,6 +47,15 @@ class ApplyForm(forms.ModelForm):
         "code":"코드 입력란",
         "know_check":"피로그래밍 알게 된 경로",
         }
+        widgets={
+            'participate_check':forms.RadioSelect,
+            'workshop_check':forms.RadioSelect,
+            'info_check':forms.RadioSelect,
+            'major_grade':forms.RadioSelect,
+            'sub_major_semester':forms.RadioSelect,
+            'know_check':forms.RadioSelect
+        }
+
 
 class ApplyConfirm(forms.Form):
     name = forms.CharField(max_length=15, label="이름")
