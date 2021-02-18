@@ -106,3 +106,17 @@
     background-color: black;
     color: #2F80ED;
 }
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    .interview-containor {
+        padding : 0 20px;
+    }
+    .interview-containor, .question, .answer{
+        width : 100%;
+    }
+    .intro-name {
+        font-size:30px;
+    }
+}
+  
