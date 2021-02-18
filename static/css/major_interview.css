@@ -1,0 +1,28 @@
+
+
+.button-containor a {
+    
+    display: inline-block;
+    text-decoration:none;
+    width: 219px;
+    height: 55px;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+    background-color: #272727;
+    color: white;
+
+} 
+
+.button-containor span {
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    /* font-weight: bold; */
+    font-stretch: normal;
+    font-style: normal;
+    display: flex; justify-content: center; align-items: center;
+    line-height:55px;
+    letter-spacing: normal;
+    color: #4dff53;
+}
+/* 선택O */
