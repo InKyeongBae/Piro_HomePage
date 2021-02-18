@@ -108,9 +108,9 @@ def applyConfirm(request):
                 applicant = Applicant.objects.get(season__season_num = season.season_num, name=name, phone_number=phone_number)
                 print(applicant)
                 apply_date = applicant.created_at.date()
-                msg = f'{name}님의 {apply_date} 피로그래밍 서류 전형 지원 이력이 확인되었습니다'
+                msg = f'{name}님! {apply_date}에 피로그래밍 서류 전형 지원 이력이 확인되었습니다! 서류 전형 결과 발표를 기다려주세요'
             except ObjectDoesNotExist:
-                msg = "서류전형 지원 이력이 없습니다! 피로그래밍에 지원해주세요"
+                msg = "서류전형 지원 이력이 없습니다!"
 
             messages.error(request, msg)
             return redirect(reverse('apply:applyconfirm'))
@@ -118,3 +118,79 @@ def applyConfirm(request):
             msg = "확인에 오류가 있습니다! 다시 입력해 주세요"
             messages.error(request, msg)
             return redirect(reverse('apply:applyconfirm'))
+
+
+def resultConfrim(request, cat):
+    result_category = str(cat)
+    season = Season.objects.order_by('-created_at').first()
+    now = timezone.now()
+    
+    if result_category == 'doc' and (now>=season.doc_result_start and now<=season.doc_result_end):
+        if request.method =='GET':
+            form = ApplyConfirm()
+            ctx = {
+                'result_category':result_category,
+                'form':form,
+            }
+            return render(request, 'apply/result_confirm.html', ctx)
+        else:
+            form = ApplyConfirm(request.POST)
+            if form.is_valid():
+                name = form.cleaned_data.get('name')
+                phone_number = form.cleaned_data.get('phone_number')
+                try:
+                    applicant = Applicant.objects.get(season__season_num = season.season_num, name=name, phone_number=phone_number)
+                except ObjectDoesNotExist:
+                    msg = "지원자 명단에 없습니다. 지원 여부를 다시한번 확인해주세요"
+                    messages.error(request, msg)
+                    return redirect("")
+                result = applicant.doc_pass
+                meeting_datetime = applicant.meeting_date_time
+                #meeting_place = applicant.season.meeting_place
+                ctx = {
+                    'result_category':result_category,
+                    'season_number':season.season_num,
+                    'name':name,
+                    'result':result,
+                    'meeting_datetime':meeting_datetime,
+                    'meeting_info':season.doc_meeting_info,
+                }
+                return render(request, 'apply/result_page.html', ctx)
+
+    elif result_category == "fianl" and (now>=season.final_result_open and now<=season.final_result_close):
+        if request.method == 'GET':
+            form = ApplyConfirm()
+            ctx = {
+                'result_category':result_category,
+                'form':form,
+            }
+            return render(request, 'apply/doc_result_confirm.html', ctx)
+        else:
+            form = ApplyConfirm(request.POST)
+            name = form.cleaned_data.get('name')
+            phone_number = form.cleaned_data.get('phone_number')
+            try:
+                applicant = Applicant.objects.get(season__season_num = season.season_num, name=name, phone_number=phone_number)
+            except ObjectDoesNotExist:
+                msg = "지원자 명단에 없습니다. 지원 여부를 다시한번 확인해주세요"
+                messages.error(request, msg)
+                return redirect("")
+            result = applicant.final_pass
+            workshop_date = season.workshop_date
+            workshop_place = season.workshop_place
+            #meeting_place = applicant.season.meeting_place
+            ctx = {
+                'result_category':result_category,
+                'season_number':season.season_num,
+                'name':name,
+                'result':result,
+                'final_info':season.final_info,
+                'workshop_date':workshop_date,
+                'workshop_place':workshop_place,
+            }
+            return render(request, 'apply/final_result_page.html', ctx)
+
+    else:
+        msg = "합격자 발표 기간이 아닙니다!"
+        messages.error(request, msg)
+        return redirect(reverse('main:main_page'))

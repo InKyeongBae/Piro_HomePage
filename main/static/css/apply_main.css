@@ -1,0 +1,72 @@
+#title_section{
+    width: 100vw;
+  height: 15vw;
+  padding: 0 0 118px;
+  background-color: #151515;
+  padding-top:7vw;
+}
+
+
+#title1{
+  font-family: NotoSansKR;;
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left:10vw;
+}
+
+
+#img_section{
+    width:80vw;
+    margin:5vw auto;
+    display:flex;
+    justify-content: center;
+}
+
+#poster{
+    width:80vw;
+    height:25vw;
+}
+
+#btn_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:5vw;
+    margin-bottom : 5rem;
+}
+
+#apply{
+    border-radius: 40px;
+  border: solid 1px #1f1f1f;
+  background-color: #151515;
+  font-weight: bold;
+  color: #4dff53;
+  font-size:1.5rem;   
+  text-align: center;
+  padding-top:0.9rem;
+  width: 15rem;
+  height: 3.5rem;
+}
+
+#a_section{
+    width:15rem;
+}
+
+#btn{
+    border-radius: 40px;
+  border: solid 1px #1f1f1f;
+  background-color: white;
+  font-weight: bold;
+  color: #6a6a6a;
+  font-size:1.5rem;   
+  text-align: center;
+  padding-top:0.9rem;
+  width: 15rem;
+  height: 3.5rem;
+  margin-top:2.2rem;
+}

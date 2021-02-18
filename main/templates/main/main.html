@@ -5,6 +5,12 @@
 <div class="banner_subtitle">비전공자를 위한 웹 프로그래밍 동아리</div>
 {% endblock subtitle %} {% block titlename %}PIROGRAMMNG{% endblock titlename %}
 {% block contents %}
+
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+  {% endfor %}
+{% endif %}
 <div class="black_background"><span>메인 배너용 추가 검정배경</span></div>
 <div class="main_company">
   <div class="main_container">

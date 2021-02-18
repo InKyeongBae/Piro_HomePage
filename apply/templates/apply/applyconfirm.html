@@ -1,25 +1,41 @@
 {% extends 'layout2.html' %}
+{% load static %}
+{% block custom_style %} 
+    <link rel="stylesheet" href="{% static 'css/apply_confirm.css' %}">
+{% endblock %}
 
 {% block title %}
-  피로그래밍 지원하기
+  피로그래밍 지원 상태 확인
 {% endblock title %}
 {% block contents %}
+<div id="title_section">
+    <div id="title1">지원 상태 확인</div>
+</div>
 
-
-    
+<div id="form_section"> 
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
+    <div id="name_section">
+        <div id="name">이름</div>
+        <div id="name_field">
+            {{ form.name }}
+        </div>
+    </div>
 
-        <input type="submit" value="제출하기">
+    <div id="phone_number_section">
+        <div id="phone_number">전화번호</div>
+        <div id="phone_number_field">
+            {{form.phone_number}}
+        </div>
+    </div>  
+    <input id="submit_btn" type="submit" value="확인">
         {% if messages %}
             {% for message in messages %}
                 {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
             {% endfor %}
         {% endif %}
 </form>
+</div> 
 
 {% endblock contents %}
     
