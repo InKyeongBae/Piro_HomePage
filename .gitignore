@@ -150,9 +150,13 @@ dmypy.json
 # profiling data
 .prof
 
+
+
+=======
 # Only for Development only
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+
