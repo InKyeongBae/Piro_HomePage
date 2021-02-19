@@ -21,6 +21,35 @@ a {
   padding-bottom: 35px;
 }
 
+/* 이스터에그 */
+.content_wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.content_imagewrap {
+  display: inline-block;
+}
+
+.content_image {
+  width: 165px;
+}
+
+.content_description {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.piro_name {
+  font-size: 30px;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+}
+
+/* 이스터에그 css 끝 */
+
 .main_navbar {
   background-color: #131415;
   color: white;
@@ -174,6 +203,33 @@ a {
 
 /* 미디어 쿼리 */
 @media screen and (max-width: 768px) {
+  /* 이스터에그 */
+
+  .content_imagewrap {
+    display: inline-block;
+  }
+
+  .content_image {
+    min-width: 150px;
+    width: 27vw;
+  }
+
+  .content_description {
+    min-width: 170px;
+    margin-left: 3vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .piro_name {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  .piro_detailDesc {
+    font-size: 2vw;
+  }
+  /* 이스터에그 css 종료 */
+
   .navbar_wrap {
     justify-content: space-between;
   }

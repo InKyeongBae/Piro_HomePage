@@ -144,6 +144,41 @@
         ><i class="big users icon sidebar_icon"></i>Join us</a
       >
     </div>
+    <div class="ui longer modal">
+      <div class="header">이 사이트를 만든 사람들</div>
+      <div class="scrolling content">
+        <div class="content_wrap">
+          <div class="content_imagewrap">
+            <img
+              class="content_image"
+              src="{% static 'images/piro13_genie.jpeg' %}"
+              alt="piro13"
+            />
+          </div>
+          <div class="content_description">
+            <div class="piro_name">이진희</div>
+            <div class="piro_detailDesc">
+              <div class="piro_school">소속: 경기대학교 컴퓨터공학부</div>
+              <div class="piro_number">기수: 피로그래밍 13기</div>
+              <div class="piro_mygoal">좌우명: 항상 긍정적으로 생각하자</div>
+              <div class="piro_interest">
+                관심있는 분야: <i class="xi-javascript xi-2x"></i>와 관련된 모든
+                것(React, nodejs 등등)
+              </div>
+              <div class="piro_like">
+                좋아하는 것: 음악 들으면서 코딩하기(Day6, 폴킴, 성시경 왕팬 😍),
+                맛있는 음식 먹기(회, 초밥, 콜드브루 진짜 좋아함)
+              </div>
+              <div class="piro_dislike">싫어하는 것: 벌레</div>
+              <div class="piro_personality">
+                성격: 긍정적이지만 코딩하다가 막히면 ... 🤬🤬
+              </div>
+              <div class="piro_comment">한마디: 졸려...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="pusher">
       <div class="entire_wrap">
         <div class="main_navbar">
@@ -286,6 +321,33 @@
         });
       };
       $(document).ready(menuActive);
+
+      // Easter Egg(비밀키를 치면 '이 사이트를 만든 사람들' Modal 창 띄움)
+      // SecretKey = 'pirogramming'
+
+      const checkAnswer = (answer, target) => {
+        if (answer.toString() === target.toString()) {
+          inputKeys = [];
+          return true;
+        }
+        return false;
+      };
+
+      let inputKeys = [];
+      const secretKey = [80, 73, 82, 79, 71, 82, 65, 77, 77, 73, 78, 71];
+      $(document).keyup(function (e) {
+        inputKeys.push(e.keyCode);
+        if (inputKeys.length === secretKey.length) {
+          if (checkAnswer(secretKey, inputKeys)) {
+            $(".ui.longer.modal").modal("show");
+          }
+        } else if (inputKeys.length > secretKey.length) {
+          inputKeys.shift();
+          if (checkAnswer(secretKey, inputKeys)) {
+            $(".ui.longer.modal").modal("show");
+          }
+        }
+      });
     </script>
   </body>
 </html>
