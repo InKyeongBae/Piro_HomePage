@@ -1,19 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout2.html' %}
+{% load static %}
+{% block custom_style %} 
+    <link rel="stylesheet" href="{% static 'css/apply_main.css' %}">
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인터뷰이 등록하기</title>
-</head>
-
-<body>
-    <div>
-        <img src="{{img.url}}">
+{% block contents %}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}
+<script>alert("{{ message }}")</script> {% endif %}
+{% endfor %}
+{% endif %}
+<div>
+    <div id="title_section">
+        <div id="title1">Join Us</div>
     </div>
-    <div>{{status}}</div>
-    <div>{{notify_date}}</div>
+    <div id="img_section">
+        <img id="poster" src="{{img.url}}">
+    </div>
+    <div id="btn_section">
+        {% if status == 'doc' %}
+        <a id="a_section" href = "{% url 'apply:application' %}">
+        <div id="apply">
+            지원하기
+        </div>
+        </a>
+        {% endif %}
 
-</body>
 
-</html>
+        {% if status == 'doc_result_waiting' %}
+        <div id="doc_waiting_info1">
+            서류 전형 지원 기간이 마감되었습니다.
+        </div>
+        <div id="doc_wating_info2">
+            서류 전형 합격자 발표일시는 {{notify_date.month}}월 {{notify_date.day}}일 {{notify_date.hour}}시 {{notify_date.minute}}분입니다
+        </div>
+        {% endif %}
+
+
+        {% if status == 'doc' or status == 'doc_result_waiting' %}
+        <a id="a_section" href = "{% url 'apply:applyconfirm' %}">
+            <div id="btn">
+            지원 상태 확인
+            </div>
+        </a>
+        {% endif %}
+
+
+        {% if status == 'doc_result' %}
+        <div id="btn">
+            서류전형 합격 조회
+        </div>
+        {% endif %}
+
+        
+        {% if status == 'final_result_waiting' %}
+        <div id="final_waiting_info1">
+            피로그래밍에 대한 많은 관심 감사드립니다
+        </div>
+        <div id="final_wating_info2">
+            최종 합격자 발표일시는 {{notify_date.month}}월 {{notify_date.day}}일 {{notify_date.hour}}시 {{notify_date.minute}}분입니다
+        </div>
+        {% endif %}
+
+        
+        {% if status == 'final' %}
+        <div id="btn">
+            최종 합격 조회
+        </div>
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+
+{% endblock contents %}

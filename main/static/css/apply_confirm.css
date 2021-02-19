@@ -1,0 +1,90 @@
+#title_section{
+    width: 100vw;
+  height: 15vw;
+  padding: 0 0 118px;
+  background-color: #151515;
+  padding-top:7vw;
+}
+
+
+#title1{
+  font-family: NotoSansKR;;
+  font-size: 4rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left:10vw;
+}
+
+#form_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form_section{
+    margin-top:7vw;
+    margin-bottom:7vw;
+}
+
+#name_section, #phone_number_section{
+    display: flex;
+    flex-direction: row;
+    margin-top : 10px;
+    margin-bottom:10px;
+}
+
+#name{
+    font-family: NotoSansKR;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #555555;
+  margin-right:61px;
+}
+
+#name_field>input{
+    width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 2px #1f1f1f;
+}
+
+#phone_number{
+    font-family: NotoSansKR;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #555555;
+  margin-right:20px;
+}
+
+#phone_number_field>input{
+    width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 2px #1f1f1f;
+}
+
+#submit_btn{
+    width: 355px;
+  height: 55px;
+  border: solid 2px #1f1f1f;
+  background-color: #151515;
+  font-size: 24px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top:60px;
+}

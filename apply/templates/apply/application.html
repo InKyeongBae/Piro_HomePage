@@ -1,22 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout2.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인터뷰이 등록하기</title>
-</head>
+{% block title %}
+  피로그래밍 지원하기
+{% endblock title %}
+{% block contents %}
 
-<body>
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-            <table>
-                {{ form.as_table }}
-            </table>
+
+{% if messages %}
+    <script>alert("{{messages}}")</script>
+{% endif %}
     
-            <input type="submit" value="저장하기">
-        </form>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
 
-</body>
+        <input type="submit" value="제출하기">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+            {% endfor %}
+        {% endif %}
+</form>
 
-</html>
+
+{% endblock contents %}
+    
+

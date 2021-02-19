@@ -2,10 +2,21 @@
 {% load static %}
 <html lang="en">
   <head>
-    <title>피로그래밍</title>
+    <title>
+      {% block title %}
+        
+      {% endblock title %}
+    </title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- web font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- favicon option -->
     <meta name="msapplication-TileColor" content="#ffffff" />
@@ -85,19 +96,26 @@
     />
     <link rel="manifest" href="{% static 'images/favicons/manifest.json' %}" />
 
+    <!-- fontAwesome icon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     />
+
+    <!-- semantic UI framework css -->
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'semantic/semantic.min.css' %}"
     />
+
+    <!-- Xeicon -->
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
+
+    <!-- Druk Wide Bold web font -->
     <link
       href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
       rel="stylesheet"
@@ -111,11 +129,15 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+
+    <!-- semantic UI framework javascript -->
     <script src="{% static 'semantic/semantic.min.js' %}"></script>
   </head>
   <body>
     <div class="ui right sidebar inverted vertical icon menu">
-      <a class="item" href=""><i class="big home icon sidebar_icon"></i>Home</a>
+      <a class="item" href="{% url 'main:main_page' %}"
+        ><i class="big home icon sidebar_icon"></i>Home</a
+      >
       <a class="item" href="/gallery"
         ><i class="big images icon sidebar_icon"></i>Gallery</a
       >
@@ -126,21 +148,58 @@
         ><i class="big users icon sidebar_icon"></i>Join us</a
       >
     </div>
+    <div class="ui longer modal">
+      <div class="header">이 사이트를 만든 사람들</div>
+      <div class="scrolling content">
+        <div class="content_wrap">
+          <div class="content_imagewrap">
+            <img
+              class="content_image"
+              src="{% static 'images/piro13_genie.jpeg' %}"
+              alt="piro13"
+            />
+          </div>
+          <div class="content_description">
+            <div class="piro_name">이진희</div>
+            <div class="piro_detailDesc">
+              <div class="piro_school">소속: 경기대학교 컴퓨터공학부</div>
+              <div class="piro_number">기수: 피로그래밍 13기</div>
+              <div class="piro_mygoal">좌우명: 항상 긍정적으로 생각하자</div>
+              <div class="piro_interest">
+                관심있는 분야: <i class="xi-javascript xi-2x"></i>와 관련된 모든
+                것(React, nodejs 등등)
+              </div>
+              <div class="piro_like">
+                좋아하는 것: 음악 들으면서 코딩하기(Day6, 폴킴, 성시경 왕팬 😍),
+                맛있는 음식 먹기(회, 초밥, 콜드브루 진짜 좋아함)
+              </div>
+              <div class="piro_dislike">싫어하는 것: 벌레</div>
+              <div class="piro_personality">
+                성격: 긍정적이지만 코딩하다가 막히면 ... 🤬🤬
+              </div>
+              <div class="piro_comment">한마디: 졸려...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="pusher">
       <div class="entire_wrap">
         <div class="main_navbar">
           <div class="container">
             <div class="navbar_wrap">
               <div class="navbar_logo">
-                <a href=""
+                <a href="{% url 'main:main_page' %}"
                   ><img class="logo_img" src="{% static 'images/logo.png' %}" />
                 </a>
               </div>
               <div class="navbar_menulist">
-                <a class="navbar_menu" href=""{% url 'main:main_page' %}"">Home</a>
+                <a class="navbar_menu" href="{% url 'main:main_page' %}"
+                  >Home</a
+                >
                 <a class="navbar_menu" href="/gallery">Gallery</a>
-                <a class="navbar_menu" href="{% url 'interview:interview_list' %}">Interview</a>
-                <a class="navbar_menu" href="/joinus">Join us</a>
+                <a class="navbar_menu" href="/interview">Interview</a>
+                <a class="navbar_menu" href="/apply/main">Join us</a>
               </div>
               <i class="fas fa-bars fa-2x menu_icon"></i>
             </div>
@@ -248,6 +307,33 @@
         });
       };
       $(document).ready(menuActive);
+
+      // Easter Egg(비밀키를 치면 '이 사이트를 만든 사람들' Modal 창 띄움)
+      // SecretKey = 'pirogramming'
+
+      const checkAnswer = (answer, target) => {
+        if (answer.toString() === target.toString()) {
+          inputKeys = [];
+          return true;
+        }
+        return false;
+      };
+
+      let inputKeys = [];
+      const secretKey = [80, 73, 82, 79, 71, 82, 65, 77, 77, 73, 78, 71];
+      $(document).keyup(function (e) {
+        inputKeys.push(e.keyCode);
+        if (inputKeys.length === secretKey.length) {
+          if (checkAnswer(secretKey, inputKeys)) {
+            $(".ui.longer.modal").modal("show");
+          }
+        } else if (inputKeys.length > secretKey.length) {
+          inputKeys.shift();
+          if (checkAnswer(secretKey, inputKeys)) {
+            $(".ui.longer.modal").modal("show");
+          }
+        }
+      });
     </script>
   </body>
 </html>

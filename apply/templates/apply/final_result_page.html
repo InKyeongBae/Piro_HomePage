@@ -1,0 +1,76 @@
+{% extends 'layout2.html' %}
+{% load static %}
+{% block custom_style %} 
+    <link rel="stylesheet" href="{% static 'css/final_result_page.css' %}">
+{% endblock %}
+
+{% block title %}
+  1치 서류전형 결과
+{% endblock title %}
+{% block contents %}
+<div id="title_section">
+    
+        <div id="title1">피로그래밍 {{season_number}}기</div>
+        <div id="title2">최종 지원 결과</div>
+        
+</div>
+
+<div id="contents_section">
+    {% if result is True %}
+    <div id="congrats">
+        <div>{{name}}님의 피로그래밍 {{season_number}}기 최종 </div>
+        <div>합격</div>
+        <div>을 진심으로 축하드립니다!</div>
+    </div>
+
+    <div id="info_text">
+        아래 사항을 참고하여 피로그래밍 가입 절차를 진행해주시기 바랍니다
+    </div>
+
+
+    <div id="etc_infos">
+        <div>
+            가입 절차 안내
+        </div>
+        <div>
+            {{final_info}}
+        </div>
+    </div>
+
+    <div id="meeting_infos">
+        <div>
+            워크샵 안내
+        </div>
+        <div id="datetime">
+            일시 : {{workshop_datetime.month}}월 {{workshop_datetime.day}}일 {{workshop_datetime.hour}}시 {{workshop_datetime.minute}}분
+        </div>
+        <div id="location">
+            장소 : {{workshop_place}}
+        </div>
+    </div>
+
+    {% else %}
+    <div id="sorry1">
+        <div>{{name}}님은 피로그래밍 {{season_number}}기에</div>
+        <div>불합격</div>
+        <div>하였습니다</div>
+    </div>
+    <div id="sorry2">
+        {{name}}님의 자질과 능력은 높이 평가되었으나, 제한된 선발인원 등 여러 가지 제약요건으로 함께 할 수 있는 기회를 갖지 못하게 된 점, 매우 안타깝게 생각합니다.
+    </div>
+    <div id="sorry3">
+        {{name}}님의 앞날을 피로그래밍이 응원하겠습니다
+    </div>
+    <div id="sorry4">
+        피로그래밍에 대한 관심과 지원 진심으로 감사드립니다
+    </div>
+    {% endif %}
+    
+    <a id="confirm_a"href="{% url 'main:main_page' %}"><div id="confirm">
+        확인
+    </div></a>
+</div>
+
+{% endblock contents %}
+    
+
