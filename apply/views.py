@@ -78,8 +78,15 @@ def apply(request):
             return redirect(reverse('apply:main'))
         else:
             form = ApplyForm()
+            try:
+                images = season.images.order_by('created_at')
+            except ObjectDoesNotExist:
+                images = None
+
             ctx ={
                 'form':form,
+                'season':season,
+                'images':images,
             }
             return render(request, 'apply/application.html', ctx)
     else:
@@ -90,7 +97,20 @@ def apply(request):
 
 
 def applyConfirm(request):
-    season = Season.objects.order_by('-created_at').first()
+    try:
+        season = Season.objects.order_by('-created_at').first()
+    except ObjectDoesNotExist:
+        msg = "모집 중인 기수가 없습니다"
+        messages.error(request, msg)
+        return redirect(reverse('apply:main'))
+    print("왔다")
+    now = timezone.now()
+
+    if now<season.doc_screening_start or now>=season.doc_result_start:
+        msg = "지금은 지원 기간이 아닙니다!"
+        messages.error(request.msg)
+        return redirect(reverse('apply:main'))
+
     if request.method == 'GET':
         form = ApplyConfirm()
         ctx={
