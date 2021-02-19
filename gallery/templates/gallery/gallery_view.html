@@ -1,0 +1,29 @@
+{% extends 'layout.html' %} {% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/gallery_view.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'semantic/semantic.min.css' %}"
+    />
+
+    <link
+    href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
+    rel="stylesheet"
+    type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" 
+    rel="stylesheet"
+    >
+{% endblock %}
+
+{% block titlename %}Gallery{% endblock titlename %}
+
+
+
+{% block contents %}
+갤러리
+{% endblock %}
