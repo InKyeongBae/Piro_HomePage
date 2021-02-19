@@ -6,12 +6,12 @@
 
 .contents-containor {
     width: 100%;
+    
 }
 
 .contents-box {
     display: inline-flex;
     margin-left: 130px;
-    
 }
 
 .float-banner{

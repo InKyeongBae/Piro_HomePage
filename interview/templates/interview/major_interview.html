@@ -29,17 +29,17 @@
 <div class="contents-box">
     <div class="left-containor">
         <div class="float-banner">
-            <a href="#3th" class="nth-tab">14기</a>
-            <a href="#3th" class="nth-tab">13기</a>
-            <a href="#2th" class="nth-tab">12기</a>
-            <a href="#1th" class="nth-tab">11기</a>
-            <a href="#3th" class="nth-tab">10기</a>
-            <a href="#2th" class="nth-tab">9기</a>
-            <a href="#1th" class="nth-tab">8기</a>
-            <a href="#3th" class="nth-tab">7기</a>
-            <a href="#3th" class="nth-tab">6기</a>
-            <a href="#2th" class="nth-tab">5기</a>
-            <a href="#1th" class="nth-tab">4기</a>
+            <a href="#14th" class="nth-tab">14기</a>
+            <a href="#13th" class="nth-tab">13기</a>
+            <a href="#12th" class="nth-tab">12기</a>
+            <a href="#11th" class="nth-tab">11기</a>
+            <a href="#10th" class="nth-tab">10기</a>
+            <a href="#9th" class="nth-tab">9기</a>
+            <a href="#8th" class="nth-tab">8기</a>
+            <a href="#7th" class="nth-tab">7기</a>
+            <a href="#6th" class="nth-tab">6기</a>
+            <a href="#5th" class="nth-tab">5기</a>
+            <a href="#4th" class="nth-tab">4기</a>
             <a href="#3th" class="nth-tab">3기</a>
             <a href="#2th" class="nth-tab">2기</a>
             <a href="#1th" class="nth-tab">1기</a>
@@ -269,18 +269,48 @@
 </div>
 
 <script>
-    var floatPosition = parseInt($(".float-banner").css('top'))
-    $(window).scroll(function() {
+    {% comment %} $(function() {
+        var offset = $(".float-banner").offset();
+        var topPadding = 300;
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > offset.top) {
+                console.log("if문")
+                $(".float-banner").stop().animate({
+                    marginTop: $(window).scrollTop() - offset.top + topPadding
+                });
+                console.log($(window).scrollTop() - offset.top + topPadding)
+            } else {
+                console.log("else문")
+                $(".float-banner").stop().animate({
+                    marginTop: 165
+                });
+            };
+        });
+    }); {% endcomment %}
 
-        // 현재 스크롤 위치
-        var currentTop = $(window).scrollTop();
-        var bannerTop = currentTop + floatPosition + "px";
 
-        //이동 애니메이션
-        $(".float-banner").stop().animate({
-            "top" : bannerTop
-        }, 500);
+   $(document).ready(function() {
 
-    }).scroll();
+        // 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
+        var floatPosition = parseInt($(".float-banner").css('top'));
+        // 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
+
+        $(window).scroll(function() {
+            // 현재 스크롤 위치를 가져온다.
+            var scrollTop = $(window).scrollTop();
+            var newPosition = scrollTop + floatPosition - 430 + "px";
+            
+            console.log(scrollTop)
+            if (scrollTop > floatPosition) {
+                $(".float-banner").stop().animate({
+                    "top" : newPosition
+                }, 500);
+            } 
+
+        }).scroll();
+
+    });
+
+
 </script>
 {% endblock %}

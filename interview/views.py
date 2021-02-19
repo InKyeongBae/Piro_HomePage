@@ -4,7 +4,10 @@ from django.http import HttpResponse
 from .models import *
 # Create your views here.
 def non_major_interview(request) :
-    
+    interviewees = Answer.objects.filter(major = '비전공자')
+    data = {
+        'interviewees' : interviewees,
+    }
     return render(request,'interview/non_major_interview.html',data)
 
 def major_interview(request) :
@@ -15,7 +18,10 @@ def major_interview(request) :
     return render(request,'interview/major_interview.html',data)
 
 def double_major_interview(request) :
-    
+    interviewees = Answer.objects.filter(major = '복수전공자')
+    data = {
+        'interviewees' : interviewees,
+    }
     return render(request,'interview/double_major_interview.html',data)
 
 
