@@ -25,5 +25,12 @@
 
 
 {% block contents %}
-갤러리
+<div class="photo-containor">
+    {% for photo in photos %}
+        <a href="" class="photo-box">
+            <div class="photo"><img src="{{ photo.image.url }}" alt=""  id="photo{{ photo.pk }}"></div>
+            <div class="photo-generation">{{ photo.generation }}기</div>
+        </a>
+    {% endfor %}
+</div>
 {% endblock %}
