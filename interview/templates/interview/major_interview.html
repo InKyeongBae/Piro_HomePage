@@ -29,17 +29,17 @@
 <div class="contents-box">
     <div class="left-containor">
         <div class="float-banner">
-            <a href="#3th" class="nth-tab">14기</a>
-            <a href="#3th" class="nth-tab">13기</a>
-            <a href="#2th" class="nth-tab">12기</a>
-            <a href="#1th" class="nth-tab">11기</a>
-            <a href="#3th" class="nth-tab">10기</a>
-            <a href="#2th" class="nth-tab">9기</a>
-            <a href="#1th" class="nth-tab">8기</a>
-            <a href="#3th" class="nth-tab">7기</a>
-            <a href="#3th" class="nth-tab">6기</a>
-            <a href="#2th" class="nth-tab">5기</a>
-            <a href="#1th" class="nth-tab">4기</a>
+            <a href="#14th" class="nth-tab">14기</a>
+            <a href="#13th" class="nth-tab">13기</a>
+            <a href="#12th" class="nth-tab">12기</a>
+            <a href="#11th" class="nth-tab">11기</a>
+            <a href="#10th" class="nth-tab">10기</a>
+            <a href="#9th" class="nth-tab">9기</a>
+            <a href="#8th" class="nth-tab">8기</a>
+            <a href="#7th" class="nth-tab">7기</a>
+            <a href="#6th" class="nth-tab">6기</a>
+            <a href="#5th" class="nth-tab">5기</a>
+            <a href="#4th" class="nth-tab">4기</a>
             <a href="#3th" class="nth-tab">3기</a>
             <a href="#2th" class="nth-tab">2기</a>
             <a href="#1th" class="nth-tab">1기</a>
@@ -56,7 +56,7 @@
             <div class="nth-containor" id="14th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 14 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -71,7 +71,7 @@
             <div class="nth-containor" id="13th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 13 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -86,7 +86,7 @@
             <div class="nth-containor" id="12th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 12 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -101,7 +101,7 @@
             <div class="nth-containor" id="11th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 11 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -116,7 +116,7 @@
             <div class="nth-containor" id="10th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 10 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -131,7 +131,7 @@
             <div class="nth-containor" id="9th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 9 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -146,7 +146,7 @@
             <div class="nth-containor" id="8th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 8 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -161,7 +161,7 @@
             <div class="nth-containor" id="7th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 7 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -176,7 +176,7 @@
             <div class="nth-containor" id="6th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 6 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -191,7 +191,7 @@
             <div class="nth-containor" id="5th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 5 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -206,7 +206,7 @@
             <div class="nth-containor" id="4th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 4 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -221,7 +221,7 @@
             <div class="nth-containor" id="3th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 3 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -236,7 +236,7 @@
             <div class="nth-containor" id="2th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 2 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -251,7 +251,7 @@
             <div class="nth-containor" id="1th">
                 {% for interviewee in interviewees %}
                     {% if interviewee.generation == 1 %}
-                        <div class="thumbnail-containor">
+                        <div class="thumbnail-containor" id="{{ interviewee.pk }}" onclick = "interview_view(this.id)">
                             <a class="thumbnail-image">
                                 <img src="{{ interviewee.image.url }}" alt="">
                             </a>
@@ -267,20 +267,43 @@
     </div>
 </div>
 </div>
-
 <script>
-    var floatPosition = parseInt($(".float-banner").css('top'))
-    $(window).scroll(function() {
+    function interview_view(pk) {
+        var openpk = parseInt(pk);
+        {% for interviewee in interviewees %}
 
-        // 현재 스크롤 위치
-        var currentTop = $(window).scrollTop();
-        var bannerTop = currentTop + floatPosition + "px";
+            if (openpk === {{ interviewee.pk }}) {
+                pk = {{ interviewee.pk }};
+                window.open("{% url 'interview:interview_view' interviewee.pk %}", '', 'width=1000, height=600');
+            }
 
-        //이동 애니메이션
-        $(".float-banner").stop().animate({
-            "top" : bannerTop
-        }, 500);
+        {% endfor %}
+        
+    }
+</script>
+<script>
+    
+   $(document).ready(function() {
 
-    }).scroll();
+        // 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
+        var floatPosition = parseInt($(".float-banner").css('top'));
+        // 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
+
+        $(window).scroll(function() {
+            // 현재 스크롤 위치를 가져온다.
+            var scrollTop = $(window).scrollTop();
+            var newPosition = scrollTop + floatPosition - 430 + "px";
+            
+            if (scrollTop > floatPosition) {
+                $(".float-banner").stop().animate({
+                    "top" : newPosition
+                }, 500);
+            } 
+
+        }).scroll();
+
+    });
+
+
 </script>
 {% endblock %}
