@@ -159,6 +159,13 @@
 .main_repo {
   background-color: #151515;
 }
+
+.repo_wrap {
+  padding-top: 83px;
+  padding-bottom: 125px;
+  text-align: center;
+}
+
 .repo_wrap > .banner_title {
   color: #4DFF53;
 }
@@ -177,7 +184,7 @@
   background-color: #f1f1f1;
 }
 
-.intro_wrap, .repo_wrap, .company_wrap, .interview_wrap {
+.intro_wrap, .company_wrap, .interview_wrap {
   padding-top: 83px;
   padding-bottom: 60px;
   text-align: center;
