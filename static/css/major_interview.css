@@ -93,12 +93,18 @@ a#major {
     background-color: #f6f6f6;
     margin-bottom : 30px;
     margin-right: 31px;
+    cursor: pointer;
+}
+
+.thumbnail-containor:hover, a.thumbnail-image img:hover, .thumbnail-intro:hover {
+    cursor: pointer;
 }
 
 a.thumbnail-image img {
     width: 219px;
     height: 219px;
     object-fit: cover;
+    
 }
 
 .thumbnail-intro {
