@@ -29,6 +29,7 @@ a {
   /* height: 9vh; */
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 .container {
