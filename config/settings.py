@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'interview',
     'apply',
     'main',
+    'gallery',
 ]
 
 MIDDLEWARE = [
