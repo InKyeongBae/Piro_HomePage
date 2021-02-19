@@ -1,0 +1,286 @@
+{% extends 'layout.html' %} {% load static %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'css/major_interview.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'semantic/semantic.min.css' %}"
+    />
+
+    <link
+    href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
+    rel="stylesheet"
+    type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" 
+    rel="stylesheet"
+    >
+{% endblock %}
+
+{% block titlename %}Interview{% endblock titlename %}
+
+
+
+{% block contents %}
+<div class="contents-containor">
+<div class="contents-box">
+    <div class="left-containor">
+        <div class="float-banner">
+            <a href="#3th" class="nth-tab">14기</a>
+            <a href="#3th" class="nth-tab">13기</a>
+            <a href="#2th" class="nth-tab">12기</a>
+            <a href="#1th" class="nth-tab">11기</a>
+            <a href="#3th" class="nth-tab">10기</a>
+            <a href="#2th" class="nth-tab">9기</a>
+            <a href="#1th" class="nth-tab">8기</a>
+            <a href="#3th" class="nth-tab">7기</a>
+            <a href="#3th" class="nth-tab">6기</a>
+            <a href="#2th" class="nth-tab">5기</a>
+            <a href="#1th" class="nth-tab">4기</a>
+            <a href="#3th" class="nth-tab">3기</a>
+            <a href="#2th" class="nth-tab">2기</a>
+            <a href="#1th" class="nth-tab">1기</a>
+        </div>
+        
+    </div>
+    <div class="right-containor">
+        <div class="button-containor">
+            <a href="{% url 'interview:non_major_interview' %}" id="non-major"><span>비전공자</span></a>
+            <a href="{% url 'interview:major_interview' %}" id="major"><span>전공자</span></a>
+            <a href="{% url 'interview:double_major_interview' %}" id="double-major"><span>복수전공자</span></a>
+        </div>
+        <div class="interview-containor">
+            <div class="nth-containor" id="14th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 14 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="13th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 13 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="12th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 12 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="11th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 11 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="10th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 10 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="9th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 9 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="8th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 8 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="7th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 7 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="6th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 6 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="5th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 5 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="4th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 4 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="3th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 3 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="2th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 2 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="nth-containor" id="1th">
+                {% for interviewee in interviewees %}
+                    {% if interviewee.generation == 1 %}
+                        <div class="thumbnail-containor">
+                            <a class="thumbnail-image">
+                                <img src="{{ interviewee.image.url }}" alt="">
+                            </a>
+                            <div class="thumbnail-intro">
+                                <p id="name">{{ interviewee.generation }}기 {{ interviewee.name }}</p>
+                                <p id="introduce">{{ interviewee.intro }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    var floatPosition = parseInt($(".float-banner").css('top'))
+    $(window).scroll(function() {
+
+        // 현재 스크롤 위치
+        var currentTop = $(window).scrollTop();
+        var bannerTop = currentTop + floatPosition + "px";
+
+        //이동 애니메이션
+        $(".float-banner").stop().animate({
+            "top" : bannerTop
+        }, 500);
+
+    }).scroll();
+</script>
+{% endblock %}
