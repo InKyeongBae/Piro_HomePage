@@ -3,3 +3,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+.photo-containor{
+  display: flex;
+  position: relative;
+  right: -10%;
+  width:80%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+
+.photo-box {
+  width: 320px;
+  box-shadow: 0 0 5px 0 rgba(100, 100, 100, 0.5);
+  background-color: #f6f6f6;
+  margin: 30px;
+}
+
+.photo-box img{
+  width: 300px;
+  height : 303px;
+  object-fit:contain;
+  margin: 10px;
+}
+
+.photo-generation {
+  font-family: 'Noto Sans KR';
+  font-size: 17px;
+  font-stretch: normal;
+  font-style: normal;
+  margin : 10px 0;
+  letter-spacing: normal;
+  color: #272727;
+  display: flex;
+  justify-content: center;
+}
