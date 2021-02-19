@@ -2,11 +2,7 @@
 {% load static %}
 <html lang="en">
   <head>
-    <title>
-      {% block title %}
-        
-      {% endblock title %}
-    </title>
+    <title>{% block title %}{% endblock title %}</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -141,10 +137,10 @@
       <a class="item" href="/gallery"
         ><i class="big images icon sidebar_icon"></i>Gallery</a
       >
-      <a class="item" href="/interview"
+      <a class="item" href="{% url 'interview:major_interview' %}"
         ><i class="big user icon sidebar_icon"></i>Interview</a
       >
-      <a class="item" href="/joinus"
+      <a class="item" href="{% url 'apply:main'%}"
         ><i class="big users icon sidebar_icon"></i>Join us</a
       >
     </div>
@@ -198,8 +194,12 @@
                   >Home</a
                 >
                 <a class="navbar_menu" href="/gallery">Gallery</a>
-                <a class="navbar_menu" href="/interview">Interview</a>
-                <a class="navbar_menu" href="/apply/main">Join us</a>
+                <a
+                  class="navbar_menu"
+                  href="{% url 'interview:major_interview' %}"
+                  >Interview</a
+                >
+                <a class="navbar_menu" href="{% url 'apply:main'%}">Join us</a>
               </div>
               <i class="fas fa-bars fa-2x menu_icon"></i>
             </div>
@@ -293,7 +293,7 @@
         document.querySelectorAll(".navbar_menu").forEach((menu) => {
           let menuname = menu.textContent.toLowerCase();
           if (menuname === "join us") {
-            menuname = "joinus";
+            menuname = "apply";
           }
           let pathname = window.location.pathname;
 
