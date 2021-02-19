@@ -9,6 +9,7 @@ class Season(models.Model):
     session_start_date = models.DateField(verbose_name="세션 시작일")
     session_end_date = models.DateField(verbose_name="세션 종료일")
 
+    meeting_place = models.CharField(max_length=50, null=True, blank=True)
     meeting_date1 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 1")
     meeting_date2 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 2")
     meeting_date3 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 3")
@@ -85,7 +86,7 @@ class Applicant(models.Model):
 
     KNOW_ROOT = (
         ("sns", "피로그래밍 공식 SNS(예 - 페이스북, 인스타그램)"),
-        ("cafe community", "네이버 카페/동아리 관련 커뮤니티(예 - 스펙업, 링커리어, 캠퍼스픽"),
+        ("cafe community", "네이버 카페/동아리 관련 커뮤니티(예 - 스펙업, 링커리어, 캠퍼스픽)"),
         ("everytime", "에브리타임"),
         ("friends", "지인의 소개"),
         ("others", "기타"),
@@ -106,7 +107,7 @@ class Applicant(models.Model):
     address = models.CharField(max_length=100, verbose_name="거주지")
     phone_number = models.CharField(max_length=15, verbose_name="전화번호")
 
-    avail_meeting_time = models.CharField(max_length=30, verbose_name="면접 가능 일자")
+    avail_meeting_time = models.CharField(max_length=300, verbose_name="면접 가능 일자")
 
     answer1 = models.TextField(verbose_name="서류전형 문제1 답안")
     answer2 = models.TextField(verbose_name="서류전형 문제2 답안")
@@ -133,10 +134,10 @@ class Applicant(models.Model):
         if date1 is not None:
             t1 = (f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오전", f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오전")
             t2 = (f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오후", f"{date1.month}월 {date1.day}일 {date1.strftime('%A')} 오후")
-            self.AVAIL_TIME += t1
-            self.AVAIL_TIME += t2
+            # self.AVAIL_TIME += t1
+            # self.AVAIL_TIME += t2
         if date2 is not None:
             t3 = (f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오전", f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오전")
             t4 = (f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오후", f"{date2.month}월 {date2.day}일 {date2.strftime('%A')} 오후")
-            self.AVAIL_TIME += t3
-            self.AVAIL_TIME += t4
+            # self.AVAIL_TIME += t3
+            # self.AVAIL_TIME += t4
