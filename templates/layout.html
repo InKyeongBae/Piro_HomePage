@@ -476,31 +476,30 @@
 
       // Easter Egg(비밀키를 치면 '이 사이트를 만든 사람들' Modal 창 띄움)
       // SecretKey = 'pirogramming'
-      $(".ui.longer.modal").modal("show");
 
-      // const checkAnswer = (answer, target) => {
-      //   if (answer.toString() === target.toString()) {
-      //     inputKeys = [];
-      //     return true;
-      //   }
-      //   return false;
-      // };
+      const checkAnswer = (answer, target) => {
+        if (answer.toString() === target.toString()) {
+          inputKeys = [];
+          return true;
+        }
+        return false;
+      };
 
-      // let inputKeys = [];
-      // const secretKey = [80, 73, 82, 79, 71, 82, 65, 77, 77, 73, 78, 71];
-      // $(document).keyup(function (e) {
-      //   inputKeys.push(e.keyCode);
-      //   if (inputKeys.length === secretKey.length) {
-      //     if (checkAnswer(secretKey, inputKeys)) {
-      //       $(".ui.longer.modal").modal("show");
-      //     }
-      //   } else if (inputKeys.length > secretKey.length) {
-      //     inputKeys.shift();
-      //     if (checkAnswer(secretKey, inputKeys)) {
-      //       $(".ui.longer.modal").modal("show");
-      //     }
-      //   }
-      // });
+      let inputKeys = [];
+      const secretKey = [80, 73, 82, 79, 71, 82, 65, 77, 77, 73, 78, 71];
+      $(document).keyup(function (e) {
+        inputKeys.push(e.keyCode);
+        if (inputKeys.length === secretKey.length) {
+          if (checkAnswer(secretKey, inputKeys)) {
+            $(".ui.longer.modal").modal("show");
+          }
+        } else if (inputKeys.length > secretKey.length) {
+          inputKeys.shift();
+          if (checkAnswer(secretKey, inputKeys)) {
+            $(".ui.longer.modal").modal("show");
+          }
+        }
+      });
     </script>
   </body>
 </html>
