@@ -22,24 +22,67 @@ a {
 }
 
 /* 이스터에그 */
-.content_wrap {
+.modalContent_wrap {
   display: flex;
   flex-direction: row;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 20px;
 }
 
-.content_imagewrap {
+.modalContent_wrap:not(:first-child) {
+  margin-top: 20px;
+}
+
+.modalContent_wrap:first-child .modalContent_image,
+.modalContent_wrap:nth-child(2) .modalContent_image {
+  height: 200px;
+}
+
+.modalContent_wrap:nth-child(4) .modalContent_image {
+  height: 212px;
+}
+
+.modalContent_wrap:last-child .modalContent_image {
+  height: 223px;
+}
+
+.modalContent_imagewrap {
   display: inline-block;
 }
 
-.content_image {
-  width: 165px;
+.modalContent_image {
+  width: 175px;
+  height: 100%;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
-.content_description {
+.modalContent_description {
+  width: 100%;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.piro_namewrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+}
+
+.piro_github a {
+  color: #000000;
+}
+
+.piro_github a:hover {
+  color: #000000;
+}
+
+.xi-github.xi-2x {
+  display: none;
 }
 
 .piro_name {
@@ -205,17 +248,17 @@ a {
 @media screen and (max-width: 768px) {
   /* 이스터에그 */
 
-  .content_imagewrap {
+  .modalContent_imagewrap {
     display: inline-block;
   }
 
-  .content_image {
+  .modalContent_image {
     min-width: 150px;
     width: 27vw;
   }
 
-  .content_description {
-    min-width: 170px;
+  .modalContent_description {
+    /* min-width: 170px; */
     margin-left: 3vw;
     display: flex;
     flex-direction: column;
@@ -225,6 +268,7 @@ a {
     font-size: 5vw;
     font-weight: bold;
   }
+
   .piro_detailDesc {
     font-size: 2vw;
   }
@@ -269,5 +313,15 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+/* Easter Egg에서 사용되는 깃허브 아이콘을 위한 미디어 쿼리 */
+@media screen and (max-width: 550px) {
+  .xi-github.xi-3x {
+    display: none;
+  }
+  .xi-github.xi-2x {
+    display: inline-block;
   }
 }
