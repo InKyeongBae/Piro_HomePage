@@ -34,18 +34,36 @@
   <div class="main_container">
     <div class="desc_wrap">
       <div class="desc_item">
-        <img src="{{ desc_img.first_img.url }}" class="desc_img" alt="">
+        {% if desc_img.first_img == 'static/images/desc_1.png' %}
+        <div class="default_wrap">
+          <img src="{% static 'images/desc_1.png' %}" class="desc_img_default" alt="">
+        </div>
+        {% else %}
+          <img src="{{ desc_img.first_img.url }}" class="desc_img" alt="">
+        {% endif %}
         <p class="desc_title"> 전공에 상관없이 <br/> 누구나 도전 가능 </p>
         <p class="desc_content"> 전공이나 프로그래밍 경험 여부에 상관없이 열정만 갖고 있다면 누구나 피로그래머가 될 수 있습니다. </p>
       </div>
       <div class="desc_item">
-        <img src="{{ desc_img.second_img.url }}" class="desc_img" alt="">
+        {% if desc_img.second_img == 'static/images/desc_2.png' %}
+          <div class="default_wrap">
+            <img src="{% static 'images/desc_2.png' %}" class="desc_img_default" alt="">
+        </div>
+        {% else %}
+          <img src="{{ desc_img.second_img.url }}" class="desc_img" alt="">
+        {% endif %}
         <p class="desc_title"> 개념부터 프로젝트까지 <br/> 누구보다 알찬 방학 </p>
         <p class="desc_content"> 매주 3회 진행되는 세션과 과제로 한 달 동안 웹 프로그래밍 서비스 출시에 필요한 기초 개념부터 심화 개념까지 학습합니다.
                                 열정 넘치고 성장하고 싶은 사람들과 남은 한 달 동안 학습한 개념을 바탕으로 웹 프로젝트를 진행합니다. </p>
       </div>
       <div class="desc_item">
-        <img src="{{ desc_img.third_img.url }}" class="desc_img" alt="">
+        {% if desc_img.third_img == 'static/images/desc_3.png' %}
+          <div class="default_wrap">
+            <img src="{% static 'images/desc_3.png' %}" class="desc_img_default" alt="">
+        </div>
+        {% else %}
+          <img src="{{ desc_img.third_img.url }}" class="desc_img" alt="">
+        {% endif %}
         <p class="desc_title"> 프로그래머들과의 <br/> 활발한 교류 </p>
         <p class="desc_content"> 2014년부터 시작된 피로그래밍 구성원들과 각종 행사 및 커뮤니티를 통해 개발 공부 중 궁금한 점부터 현직자들의 유용한 커리어 조언까지 자유롭게 소통할 수 있습니다. </p>
       </div>

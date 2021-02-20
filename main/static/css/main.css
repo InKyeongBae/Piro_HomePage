@@ -57,7 +57,15 @@
   width: 303px;
   height: 202px;
   object-fit: cover;
-  border: 1px solid #dddddd;
+}
+.default_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.desc_img_default {
+  width: 202px;
+  height: 202px;
 }
 
 .desc_title {
@@ -319,7 +327,13 @@
   }
   .desc_img {
     width: 100%;
+    object-fit: cover;
     /* height: auto; */
+  }
+  .desc_img_default {
+    width: 40vw;
+    height: 40vw;
+    margin-bottom: 3vh;
   }
   .desc_title {
     margin-top: 0px;
