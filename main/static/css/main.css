@@ -195,7 +195,7 @@
 
 .intro_wrap, .company_wrap, .interview_wrap {
   padding-top: 83px;
-  padding-bottom: 60px;
+  padding-bottom: 120px;
   text-align: center;
 }
 
@@ -254,8 +254,7 @@
 }
 .interview_item {
   width: 220px;
-  /* height: 300px; */
-  border: 1px solid #dddddd;
+  height: 220px;
 }
 .interview_imagewrap {
   position: relative;
@@ -264,7 +263,6 @@
   opacity: 1;
 }
 .caption{
-  cursor: pointer;
   position: absolute;
   top: 50%; left:50%; 
   transform:translate(-50%, -50%);
@@ -278,24 +276,42 @@
 .blur{
   background-color: rgba(0,0,0,0.65);
   width: 220px;
-  height: 300px;
+  height: 224px;
   z-index: 5;
   position: absolute;
   top: 50%; left:50%; 
   transform:translate(-50%, -50%);
+  margin-bottom: 2px;
 }
-.caption-text{
+.caption_text{
   z-index: 10;
   color: #fff;
   position: absolute;
   top: 50%; left:50%; 
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 220px;
-  height: 300px;
+  height: 220px;
   text-align: center;
-  top:100px;
+  padding-top: 50px;
 }
 
+.more_btn {
+  color: #fff;
+  width: 200px;
+  height: 48px;
+  padding: 10px 48px 10px;
+  border: solid 1px #979797;
+  font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.more_btn:hover {
+  transition-duration: 0.8s;
+  color: #4dff53;
+}
 
 /* 미디어 쿼리 */
 @media screen and (max-width: 768px) {
@@ -382,7 +398,7 @@
     height: auto;
   }
 
-  .repo_wrap, .company_wrap, .interview_wrap {
+  .repo_wrap, .company_wrap {
     padding-top: 6vh;
     padding-bottom: 3vh;
   }
@@ -436,6 +452,10 @@
   }
 
   /* main_interview */
+  .interview_wrap {
+    padding-top: 6vh;
+    padding-bottom: 10vh;
+  }
   .interview_images {
     display: flex;
     flex-direction: column;
@@ -443,5 +463,11 @@
   }
   .interview_imagewrap {
     margin-bottom: 4vh;
+  }
+  .more_btn {
+    margin-top: 0vh;
+    width: 40vw;
+    height: 10vw;
+    padding: 2vw 5vw 2vw;
   }
 }

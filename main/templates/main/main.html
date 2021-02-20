@@ -222,18 +222,19 @@
       <div class="banner_title"> REVIEW </div>
       <div class="interview_images">
         {% for i in interviews %}
-          <a href="" class="interview_imagewrap">
+          <div class="interview_imagewrap">
             <img src="{{ i.interview.image.url }}" class="interview_item" alt="">
             <div class="caption">
               <div class="blur"></div>
-              <div class="caption-text">
+              <div class="caption_text">
                 <h1> {{ i.interview.generation }}기 {{ i.interview.name }} </h1>
                 <p> {{ i.interview.intro }} </p>
               </div>
             </div>
-          </a>
+          </div>
         {% endfor %}  
       </div>
+      <a class="more_btn" href="{% url 'interview:non_major_interview' %}"> view more </a>
     </div>
   </div>
 </div>
