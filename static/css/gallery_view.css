@@ -4,15 +4,13 @@
   box-sizing: border-box;
 }
 
-
-.photo-containor{
+.photo-containor {
   display: flex;
   position: relative;
   right: -10%;
-  width:80%;
+  width: 80%;
   justify-content: space-around;
   flex-wrap: wrap;
-  
 }
 
 .photo-box {
@@ -20,23 +18,63 @@
   box-shadow: 0 0 5px 0 rgba(100, 100, 100, 0.5);
   background-color: #f6f6f6;
   margin: 30px;
+  transition-duration: 0.5s;
 }
 
-.photo-box img{
+.photo-box:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 20px 5px rgba(100, 100, 100, 0.5);
+  transition-duration: 0.5s;
+}
+
+/* modal css */
+.ui.modal > .header {
+  font-family: "Noto Sans KR";
+}
+
+.image.content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+}
+
+.description {
+  padding: 20px 0 0 0 !important;
+}
+
+.ui.modal .content > .description p {
+  font-family: "Noto Sans KR";
+}
+
+/* modal css 끝 */
+
+.photo-box img {
   width: 300px;
-  height : 303px;
-  object-fit:contain;
+  height: 303px;
+  object-fit: contain;
   margin: 10px;
 }
 
 .photo-generation {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 17px;
   font-stretch: normal;
   font-style: normal;
-  margin : 10px 0;
+  margin: 0 0 10px 0;
   letter-spacing: normal;
   color: #272727;
   display: flex;
   justify-content: center;
+}
+
+/* modal media query */
+@media only screen and (max-width: 767px) {
+  .ui.modal .content > .description {
+    display: inline-block !important;
+    width: auto !important;
+  }
+
+  .ui.modal .content > .description p {
+    padding: 0 5vw;
+  }
 }
