@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
   <head>
-    <title>피로그래밍</title>
+    <title>피로그래밍 {% block headtitle %}{% endblock %}</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -145,6 +145,7 @@
       >
     </div>
     <div class="ui longer modal">
+      <i class="close icon"></i>
       <div class="header">이 사이트를 만든 사람들</div>
       <div class="scrolling content">
         <div class="modalContent_wrap">
@@ -501,5 +502,6 @@
         }
       });
     </script>
+    {% block custom_javascript %}{% endblock %}
   </body>
 </html>

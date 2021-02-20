@@ -1,36 +1,65 @@
 {% extends 'layout.html' %} {% load static %}
-{% block custom_style %}
-    <link rel="stylesheet" href="{% static 'css/gallery_view.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="{% static 'semantic/semantic.min.css' %}"
-    />
-
-    <link
-    href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
-    rel="stylesheet"
-    type="text/css"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link 
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" 
-    rel="stylesheet"
-    >
-{% endblock %}
-
-{% block titlename %}Gallery{% endblock titlename %}
-
-
-
+<!--  -->
+{% block headtitle %}| Gallery {% endblock headtitle%} {% block custom_style %}
+<link rel="stylesheet" href="{% static 'css/gallery_view.css' %}" />
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'semantic/semantic.min.css' %}"
+/>
+<link
+  href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
+  rel="stylesheet"
+  type="text/css"
+/> -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+  rel="stylesheet"
+/>
+{% endblock %} {% block titlename %}Gallery{% endblock titlename %}
+<!--  -->
 {% block contents %}
 <div class="photo-containor">
-    {% for photo in photos %}
-        <a href="" class="photo-box">
-            <div class="photo"><img src="{{ photo.image.url }}" alt=""  id="photo{{ photo.pk }}"></div>
-            <div class="photo-generation">{{ photo.generation }}기</div>
-        </a>
-    {% endfor %}
+  {% for photo in photos %}
+  <a class="photo-box photo-box{{photo.pk}}">
+    <div class="photo">
+      <img
+        src="{{ photo.image.url }}"
+        alt="gallery_img"
+        id="photo{{ photo.pk }}"
+      />
+    </div>
+    <div class="photo-generation">{{ photo.generation }}기</div>
+  </a>
+  <div class="ui tiny modal photo_modals photo{{photo.pk}}">
+    <i class="close icon"></i>
+    <div class="header">{{photo.generation}}기</div>
+    <div class="image content">
+      <div class="ui medium image">
+        <img src="{{ photo.image.url }}" />
+      </div>
+      <div class="description">
+        <p>{{ photo.description}}</p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">목록으로</div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
+{% endblock %} {% block custom_javascript %}
+<script>
+  const photoModals = document.querySelectorAll(".ui.modal.photo_modals");
+  photoModals.forEach((item, index) => {
+    $(`.ui.tiny.modal.photo_modals.photo${index + 1}`).modal(
+      "attach events",
+      `.photo-box.photo-box${index + 1}`,
+      "show"
+    );
+  });
+</script>
+
 {% endblock %}
