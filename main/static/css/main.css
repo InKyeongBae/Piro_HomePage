@@ -1,19 +1,3 @@
-.main_container {
-  width: 80%;
-  margin: 0 auto;
-  height: 100%;
-}
-
-.banner_subtitle {
-  font-size: 20px;
-  font-family: SFProDisplay;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  margin-bottom: 20px;
-}
-
 .black_background {
   height: 171px;
   background-color: #151515;
@@ -23,11 +7,10 @@
   visibility: hidden;
 }
 
-
 /* main_intro */
 .intro_content_wrap {
   margin-top: 80px;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 18px;
   line-height: 1.6rem;
 }
@@ -49,7 +32,7 @@
   padding-bottom: 62px;
 }
 
-.desc_item{
+.desc_item {
   width: 303px;
 }
 
@@ -69,14 +52,14 @@
 }
 
 .desc_title {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 24px;
   font-weight: 900;
   margin-top: 30px;
 }
 
 .desc_content {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 16px;
   /* font-weight: bold; */
 }
@@ -92,7 +75,7 @@
 }
 
 .plan_wrap > .banner_title {
-  color: #4DFF53;
+  color: #4dff53;
 }
 
 .plan_content {
@@ -142,26 +125,25 @@
   width: fit-content;
 }
 
-.step_wrap:first-child .step_content{
+.step_wrap:first-child .step_content {
   margin-left: 0;
 }
-.step_wrap:last-child .step_content{
+.step_wrap:last-child .step_content {
   margin-right: 0;
 }
 
 .step_title {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 24px;
   font-weight: 900;
   color: #ffffff;
   margin-bottom: 3px;
 }
 .step_month {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 20px;
   color: #ffffff;
 }
-
 
 /* main_repo */
 .main_repo {
@@ -175,7 +157,7 @@
 }
 
 .repo_wrap > .banner_title {
-  color: #4DFF53;
+  color: #4dff53;
 }
 .repo_content {
   padding-top: 72px;
@@ -193,7 +175,9 @@
   background-color: #f1f1f1;
 }
 
-.intro_wrap, .company_wrap, .interview_wrap {
+.intro_wrap,
+.company_wrap,
+.interview_wrap {
   padding-top: 83px;
   padding-bottom: 120px;
   text-align: center;
@@ -244,7 +228,7 @@
   background-color: #151515;
 }
 .interview_wrap > .banner_title {
-  color: #4DFF53;
+  color: #4dff53;
 }
 .interview_images {
   display: flex;
@@ -259,35 +243,38 @@
 .interview_imagewrap {
   position: relative;
 }
-.interview_imagewrap:hover .caption{
+.interview_imagewrap:hover .caption {
   opacity: 1;
 }
-.caption{
+.caption {
   position: absolute;
-  top: 50%; left:50%; 
-  transform:translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  -webkit-transition:all 0.45s ease-in-out;
-  -moz-transition:all 0.45s ease-in-out;
-  -o-transition:all 0.45s ease-in-out;
-  -ms-transition:all 0.45s ease-in-out;
-  transition:all 0.45s ease-in-out;
+  -webkit-transition: all 0.45s ease-in-out;
+  -moz-transition: all 0.45s ease-in-out;
+  -o-transition: all 0.45s ease-in-out;
+  -ms-transition: all 0.45s ease-in-out;
+  transition: all 0.45s ease-in-out;
 }
-.blur{
-  background-color: rgba(0,0,0,0.65);
+.blur {
+  background-color: rgba(0, 0, 0, 0.65);
   width: 220px;
   height: 224px;
   z-index: 5;
   position: absolute;
-  top: 50%; left:50%; 
-  transform:translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin-bottom: 2px;
 }
-.caption_text{
+.caption_text {
   z-index: 10;
   color: #fff;
   position: absolute;
-  top: 50%; left:50%; 
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 220px;
   height: 220px;
@@ -398,12 +385,14 @@
     height: auto;
   }
 
-  .repo_wrap, .company_wrap {
+  .repo_wrap,
+  .company_wrap {
     padding-top: 6vh;
     padding-bottom: 3vh;
   }
 
-  .company_images, .interview_images {
+  .company_images,
+  .interview_images {
     padding-top: 2.5vh;
   }
 

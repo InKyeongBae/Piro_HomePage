@@ -22,11 +22,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#form_section {
-  margin-top: 7vw;
-  margin-bottom: 7vw;
+  justify-content: center;
+  height: 500px;
 }
 
 #name_section,
@@ -56,6 +53,7 @@
   border-radius: 5px;
   border: solid 2px #1f1f1f;
   font-size: 25px;
+  padding: 5px;
 }
 
 #phone_number {
@@ -77,6 +75,7 @@
   border-radius: 5px;
   border: solid 2px #1f1f1f;
   font-size: 25px;
+  padding: 5px;
 }
 
 #submit_btn {
@@ -91,4 +90,15 @@
   letter-spacing: normal;
   color: #ffffff;
   margin-top: 60px;
+}
+
+#submit_btn:hover {
+  cursor: pointer;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  #form_section {
+    height: 48vh;
+  }
 }

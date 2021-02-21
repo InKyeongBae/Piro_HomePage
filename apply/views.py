@@ -109,7 +109,7 @@ def applyConfirm(request):
 
     if now<season.doc_screening_start or now>=season.doc_result_start:
         msg = "지금은 지원 기간이 아닙니다!"
-        messages.error(request.msg)
+        messages.error(request,msg)
         return redirect(reverse('apply:main'))
 
     if request.method == 'GET':
