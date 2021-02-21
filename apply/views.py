@@ -11,6 +11,11 @@ def main(request):
 
     try:
         season = Season.objects.order_by('-created_at').first()
+        print(season)
+        if season is None:
+            msg = "모집 중인 기수가 없습니다"
+            messages.error(request, msg)
+            return redirect(reverse('main:main_page'))
     except ObjectDoesNotExist:
         msg = "모집 중인 기수가 없습니다"
         messages.error(request, msg)
