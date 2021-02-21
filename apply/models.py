@@ -25,11 +25,11 @@ class Season(models.Model):
     question5 = models.TextField(verbose_name="서류전형 문제5")
     coding_test = models.TextField(verbose_name="코딩테스트 문제")
     
-    doc_meeting_info = models.TextField(verbose_name="면접전형 관련 추가 안내", null=True, blank=True)
+    doc_meeting_info = models.TextField(verbose_name="면접전형 관련 추가 안내", null=True, blank=True, help_text="서류전형 결과 발표 페이지 하단에 들어갑니다. 면접관련 추가 전달 사항을 입력해주세요")
     doc_result_start = models.DateTimeField(verbose_name="서류전형 결과 발표 시작일시")
     doc_result_end = models.DateTimeField(verbose_name="서류전형 결과 발표 마감일시")
 
-    final_info = models.TextField(null=True, blank=True, verbose_name="최종발표 관련 추가 안내")
+    final_info = models.TextField(null=True, blank=True, verbose_name="최종발표 관련 추가 안내", help_text="최종 결과 발표 페이지 하단에 들어갑니다. 최종 합격자 합격 등록 절차 등 전달 사항을 입력해주세요")
     final_result_open = models.DateTimeField(verbose_name="최종발표 시작일시")
     final_result_close = models.DateTimeField(verbose_name="최종발표 마감일시")
 
@@ -43,7 +43,8 @@ class Season(models.Model):
         return f'{self.season_num}기 모집'
 
 class Image(models.Model):
-    img = models.ImageField(upload_to="image", verbose_name="코딩테스트 문제 관련 이미지")
+    img = models.ImageField(upload_to="image", verbose_name="코딩테스트 문제 관련 이미지", help_text="사진은 등록 순서대로 지원서 페이지에 올라갑니다")
+    title = models.CharField(max_length=100, verbose_name="사진 제목", help_text="지원서에서 사진 위에 보여집니다 ex)코딩테스트 조건 / 출력 결과")
 
     season = models.ForeignKey(Season, related_name="images", on_delete=models.CASCADE, verbose_name="모집 기수")
     

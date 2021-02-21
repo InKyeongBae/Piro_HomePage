@@ -1,4 +1,4 @@
-{% extends 'layout2.html' %}
+{% extends 'layout.html' %}
 {% load static %}
 {% block custom_style %} 
     <link rel="stylesheet" href="{% static 'css/doc_result_page.css' %}">
@@ -7,13 +7,16 @@
 {% block title %}
   1치 서류전형 결과
 {% endblock title %}
+
+{% block subtitle %}
+피로그래밍 {{season_number}}기
+{% endblock subtitle %}
+
+{% block titlename %}
+1차 서류전형 결과
+{% endblock titlename %}
 {% block contents %}
-<div id="title_section">
-    
-        <div id="title1">피로그래밍 {{season_number}}기</div>
-        <div id="title2">1차 서류전형 결과</div>
-        
-</div>
+
 
 <div id="contents_section">
     {% if result is True %}

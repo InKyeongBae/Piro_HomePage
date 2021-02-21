@@ -1,22 +1,245 @@
-{% extends 'layout2.html' %}
-
+{% extends 'layout.html' %}
+{% load static %}
 {% block title %}
   피로그래밍 지원하기
 {% endblock title %}
+
+{% block custom_style %} 
+    <link rel="stylesheet" href="{% static 'css/application.css' %}">
+{% endblock %}
+
+{% block titlename %}
+피로그래밍 {{season.season_num}}기 지원서
+{% endblock titlename %}
+
 {% block contents %}
 
-
-{% if messages %}
-    <script>alert("{{messages}}")</script>
-{% endif %}
     
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
+        
+    <div id="application_container">
+        <div id="qna_section">
+            <div id="number">1</div>
+            <div id="qna">
+                <div>피로그래밍 모든 일정에 참여 가능한가요?</div>
+                <div id="sub_q">면접 (
+                    {% if season.meeting_date1 is not None %}
+                        {{season.meeting_date1.month}}/{{season.meeting_date1.day}},
+                    {% endif %}
 
-        <input type="submit" value="제출하기">
+                    {% if season.meeting_date2 is not None %}
+                        {{season.meeting_date2.month}}/{{season.meeting_date2.day}},
+                    {% endif %}
+                    
+                    {% if season.meeting_date3 is not None %}
+                        {{season.meeting_date3.month}}/{{season.meeting_date3.day}}
+                    {% endif %}
+                ), 정규세션 (
+                    {{season.session_start_date.year}}/{{season.session_start_date.month}}/{{season.session_start_date.day}} ~ {{season.session_end_date.year}}/{{season.session_end_date.month}}/{{season.session_end_date.day}}
+                ) 매주 화, 목, 토 (10:00 ~ 17:00 공휴일 제외)
+                </div>
+                <div>{{form.participate_check}}</div>
+            </div>
+        </div>
+        <div id="qna_section">
+            <div id="number">2</div>
+            <div id="qna">
+                <div id="q">피로그래밍 워크샵({{season.workshop_date.month}}월 {{season.workshop_date.day}}일 {{season.workshop_date.hour}}시 {{season.workshop_date.minute}}분)에 참여 가능한가요?</div>
+                <div>{{form.workshop_check}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">3</div>
+            <div id="qna">
+                <div id="q">피로그래밍을 알게 된 경로는 어디인가요?</div>
+                <div>{{form.know_check}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">4</div>
+            <div id="qna">
+                <div>개인정보 이용동의</div>
+                <div id="sub_q">본 피로그래밍 {{season.season_num}}기 지원서에 입력한 개인정보는 피로그래밍 신규 회원 모집 및 선발, 피로그래밍 활동에만 이용되며, 이외의 용도로 활용되지 않습니다.</div>
+                <div>{{form.info_check}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">5</div>
+            <div id="qna">
+                <div>보증금 납부 동의</div>
+                <div id="sub_q">동아리 활동에는 보증금 제도가 있습니다. 동아리 시작 시 20만 원의 보증금을 내시게 됩니다. 강의(화, 목, 토) 결석이나 과제 미제출 시, 지각이나 늦은 과제 제출 시 보증금에서 차감됩니다. 방학 중 모든 활동에 정상적으로 참여하시면 활동비를 제외한 나머지 금액을 돌려드립니다. 동아리의 보증금 제도에 동의하십니까? </div>
+                <div>{{form.deposit_check}}</div>
+            </div>
+        </div>
+
+        <div id="sub_title">SECTION1. 개인정보</div>
+
+        <div id="qna_section">
+            <div id="number">1</div>
+            <div id="qna">
+                <div>이름</div>
+                <div id="sub_q">ex) 김피로</div>
+                <div id="input1">{{form.name}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">2</div>
+            <div id="qna">
+                <div>학교</div>
+                <div id="sub_q">ex) 피로대학교</div>
+                <div id="input1">{{form.school}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">3</div>
+            <div id="qna">
+                <div>전공 학과</div>
+                <div id="sub_q">ex) 웹개발학과</div>
+                <div id="input1">{{form.major}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">4</div>
+            <div id="qna">
+                <div id="q">(복수 혹은 이중 전공인 경우) 부전공</div>
+                <div id="input1">{{form.sub_major}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">5</div>
+            <div id="qna">
+                <div id="q">(컴퓨터 관련 학과를 복수, 이중 전공인 경우) 해당 전공 이수 학기</div>
+                <div>{{form.sub_major_semester}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">6</div>
+            <div id="qna">
+                <div>학년</div>
+                <div id="sub_q">휴학 중인 경우, 수료한 학년을 기준으로 선택해주세요</div>
+                <div>{{form.major_grade}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">7</div>
+            <div id="qna">
+                <div>거주지</div>
+                <div id="sub_q">피로그래밍 활동 기간 동안 거주하시는 곳을 입력해주세요</div>
+                <div id="input1">{{form.address}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">8</div>
+            <div id="qna">
+                <div>휴대폰 번호</div>
+                <div id="sub_q">ex) 010-1234-5678</div>
+                <div id="input1">{{form.phone_number}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">9</div>
+            <div id="qna">
+                <div>면접 가능 시간대</div>
+                <div id="sub_q">아래 중 가능한 면접 일시를 모두 써주세요 ex) 1일 오전 / 2일 오후</div>
+                <div id="meeting_times">
+                    {% if season.meeting_date1 is not None %}
+                        <div>{{season.meeting_date1.month}}월 {{season.meeting_date1.day}}일 오전</div>
+                        <div>{{season.meeting_date1.month}}월 {{season.meeting_date1.day}}일 오후</div>
+                    {% endif %}
+
+                    {% if season.meeting_date2 is not None %}
+                        <div>{{season.meeting_date2.month}}월 {{season.meeting_date2.day}}일 오전</div>
+                        <div>{{season.meeting_date2.month}}월 {{season.meeting_date2.day}}일 오후</div>
+                    {% endif %}
+                    
+                    {% if season.meeting_date3 is not None %}
+                        <div>{{season.meeting_date3.month}}월 {{season.meeting_date3.day}}일 오전</div>
+                        <div>{{season.meeting_date3.month}}월 {{season.meeting_date3.day}}일 오후</div>
+                    {% endif %}
+                </div>
+                <div id="input1">{{form.avail_meeting_time}}</div>
+            </div>
+        </div>
+
+        <div id="sub_title">SECTION2. 지원서</div>
+        
+        <div id="qna_section">
+            <div id="number">1</div>
+            <div id="qna">
+                <div id="q">{{season.question1}}</div>
+                <div id="text_input">{{form.answer1}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">2</div>
+            <div id="qna">
+                <div id="q">{{season.question2}}</div>
+                <div id="text_input">{{form.answer2}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">3</div>
+            <div id="qna">
+                <div id="q">{{season.question3}}</div>
+                <div id="text_input">{{form.answer3}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">4</div>
+            <div id="qna">
+                <div id="q">{{season.question4}}</div>
+                <div id="text_input">{{form.answer4}}</div>
+            </div>
+        </div>
+
+        <div id="qna_section">
+            <div id="number">5</div>
+            <div id="qna">
+                <div id="q">{{season.question5}}</div>
+                <div id="text_input">{{form.answer5}}</div>
+            </div>
+        </div>
+
+        <div id="sub_title">SECTION3. 코딩테스트</div>
+
+        <div id="coding_test_section">
+            <div id="coding_test_info">{{season.coding_test}}</div>
+            
+            
+            {% if images is not None %}
+                {% for img in images %}
+                <div>{{img.title}}</div>
+                <div><img id="coding_test_img" src="{{img.img.url}}"></div>
+                {% endfor %}
+            {% endif %}
+            <div id="code_test_q">코딩 테스트 답변 제출</div>
+            <div id="sub_q">문제를 어떻게 풀어야할 지 모르겠다면, 점프 투 파이썬(https://wikidocs.net/book/1)을 참고하세요! (특히 클래스 부분을 잘 읽어보시기 바랍니다.)</div>
+            <div id="text_input_code">{{form.code}}</div>
+        </div>
+
+        <div id="sub_title">SECTION4. 최종 확인</div>
+
+        <div id="last_check">지원서를 한 번 제출하면 수정이 불가능 합니다! 따라서 신중히 검토 후 제출해주시기 바랍니다!</div>
+        <div id="last_check">선발 과정에서의 문의 사항은 피로그래밍 이메일 (pirogramming.official@gmail.com)혹은 카카오톡 플러스친구 (@피로그래밍)로 연락주시기 바랍니다. 빠른 시일 안에 답장 드리겠습니다.</div>
+        
+        <div id="submit_section"><input type="submit" value="제출하기"></div>
+    </div>    
+        
         {% if messages %}
             {% for message in messages %}
                 {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}

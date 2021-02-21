@@ -1,4 +1,4 @@
-{% extends 'layout2.html' %}
+{% extends 'layout.html' %}
 {% load static %}
 {% block custom_style %} 
     <link rel="stylesheet" href="{% static 'css/apply_main.css' %}">
@@ -11,10 +11,11 @@
 <script>alert("{{ message }}")</script> {% endif %}
 {% endfor %}
 {% endif %}
+
+{% block titlename %}
+Join Us
+{% endblock %}
 <div>
-    <div id="title_section">
-        <div id="title1">Join Us</div>
-    </div>
     <div id="img_section">
         <img id="poster" src="{{img.url}}">
     </div>

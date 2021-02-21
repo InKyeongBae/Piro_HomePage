@@ -1,4 +1,4 @@
-{% extends 'layout2.html' %}
+{% extends 'layout.html' %}
 {% load static %}
 {% block custom_style %} 
     <link rel="stylesheet" href="{% static 'css/apply_confirm.css' %}">
@@ -7,10 +7,11 @@
 {% block title %}
   피로그래밍 지원 상태 확인
 {% endblock title %}
+
+{% block titlename %}
+지원 상태 확인
+{% endblock titlename %}
 {% block contents %}
-<div id="title_section">
-    <div id="title1">지원 상태 확인</div>
-</div>
 
 <div id="form_section"> 
 <form action="" method="post" enctype="multipart/form-data">
