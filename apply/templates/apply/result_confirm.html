@@ -7,16 +7,15 @@
 {% block title %}
   지원 결과 조회 
 {% endblock title %}
+
+{% block titlename %}
+{% if result_category == 'doc' %}
+1차 합격 결과 조회
+{% elif result_category == 'final' %}
+최종 합격 결과 조회
+{% endif %}
+{% endblock titlename %}
 {% block contents %}
-<div id="title_section">
-    
-    {% if result_category == 'doc' %}
-        <div id="title1">1차 합격 결과 조회</div>
-    {% elif result_category == 'final' %}
-        <div id="title1">최종 합격 결과 조회</div>
-    {% endif %}
-        
-</div>
 
 <div id="form_section"> 
 <form action="" method="post" enctype="multipart/form-data">

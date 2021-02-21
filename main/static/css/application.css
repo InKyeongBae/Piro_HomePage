@@ -1,0 +1,131 @@
+#application_container{
+    width: 80%;
+    margin : 5vw; auto;
+}
+
+li{
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#qna_section{
+    display: flex;
+    flex-direction: row;
+    margin-top:3vw;
+}
+
+#sub_title{
+    margin-top:5vw;
+    margin-bottom:5vw;
+    text-align: center;
+    font-size:45px;
+
+}
+#number{
+    font-family: SpoqaHanSans;
+  font-size: 35px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #00e800;
+  margin-right:3vw;
+  text-align: left;
+}
+
+
+#qna{
+    width: 95%;
+}
+
+#qna>div:nth-child(1){
+    font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-top:7px;
+}
+
+#code_test_q{
+    font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-top:7px;
+}
+
+#q{
+    margin-bottom:30px;
+}
+
+#sub_q{
+    font-family: NotoSansKR;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-bottom: 32px;
+}
+
+#input1>input{
+    width: 386px;
+  height: 40px;
+  padding: 10px 265px 10px 15px;
+  background-color: #ffffff;
+}
+
+#text_input>textarea{
+    width: 90%;
+  height: 8vw;
+  padding: 10px;
+  font-family: NotoSansKR;
+  font-size: 17px;
+  line-height: 2rem;
+}
+
+#text_input_code>textarea{
+    width: 90%;
+  height: 20vw;
+  padding: 10px;
+  font-family: NotoSansKR;
+  font-size: 17px;
+  line-height: 2rem;
+}
+
+#last_check{
+    font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-top:7px;
+}
+
+#submit_section>input{
+    width:15%;
+    height:40px;
+    font-size:18px;
+    padding: 20px auto;
+    font-weight: bold;
+    background-color: #00e800;
+    margin:20px auto
+}
+
+#submit_section{
+    display: flex;
+    align-items: center;
+}

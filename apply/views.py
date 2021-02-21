@@ -65,9 +65,10 @@ def apply(request):
         if request.method == 'POST':
             form = ApplyForm(request.POST)
             if form.is_valid():
-                new_applicant = Applicant(**form.cleaned_data)
+                new_applicant = Applicant(**form.cleaned_data) 
                 new_applicant.season = season
                 new_applicant.save()
+
                 msg = "지원이 완료되었습니다! 지원 상태 확인을 통해서 추가 확인 해주세요!"
                 print(msg)
                 messages.success(request, msg)
