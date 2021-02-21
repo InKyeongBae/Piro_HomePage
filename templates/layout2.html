@@ -346,10 +346,10 @@
                 <a class="navbar_menu" href="{% url 'main:main_page' %}"
                   >Home</a
                 >
-                <a class="navbar_menu" href="/gallery">Gallery</a>
+                <a class="navbar_menu" href="{% url 'gallery:gallery_view' %}">Gallery</a>
                 <a
                   class="navbar_menu"
-                  href="{% url 'interview:major_interview' %}"
+                  href="{% url 'interview:non_major_interview' %}"
                   >Interview</a
                 >
                 <a class="navbar_menu" href="{% url 'apply:main'%}">Join us</a>
