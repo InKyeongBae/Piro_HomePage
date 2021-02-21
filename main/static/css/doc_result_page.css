@@ -31,8 +31,12 @@
 }
 
 #contents_section {
-  width: 70vw;
-  margin: 5vw auto;
+  /* width: 70vw;
+  margin: 5vw auto; */
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 40px 0;
   font-family: NotoSansKR;
   font-size: 25px;
   font-weight: bold;
@@ -101,4 +105,37 @@
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
+  border: 1px solid grey;
+  box-shadow: 0 0 0 0.8px;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  #sorry1 div,
+  #congrats div {
+    font-size: 5.5vw;
+  }
+
+  #sorry2,
+  #sorry3,
+  #sorry4,
+  #info_text,
+  #meeting_infos > #datetime,
+  #meeting_infos > #location {
+    font-size: 4vw;
+  }
+
+  #etc_infos div {
+    font-size: 3.5vw;
+  }
+
+  #confirm {
+    width: 18vw;
+    height: 0;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+  }
 }

@@ -1,43 +1,28 @@
-{% extends 'layout.html' %}
-{% load static %}
-{% block custom_style %} 
-    <link rel="stylesheet" href="{% static 'css/apply_confirm.css' %}">
-{% endblock %}
+{% extends 'layout.html' %} {% load static %} {% block headtitle %}| Join Us{% endblock headtitle %} {% block custom_style %}
+<link rel="stylesheet" href="{% static 'css/apply_confirm.css' %}" />
+{% endblock %} {% block titlename %} 지원 상태 확인 {% endblock titlename %} {% block contents %}
 
-{% block title %}
-  피로그래밍 지원 상태 확인
-{% endblock title %}
+<div class="main_container">
+  <div id="form_section">
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div id="name_section">
+        <div id="name">이름을 입력해주세요</div>
+        <div id="name_field">{{ form.name }}</div>
+      </div>
 
-{% block titlename %}
-지원 상태 확인
-{% endblock titlename %}
-{% block contents %}
-
-<div id="form_section"> 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div id="name_section">
-        <div id="name">이름</div>
-        <div id="name_field">
-            {{ form.name }}
-        </div>
-    </div>
-
-    <div id="phone_number_section">
-        <div id="phone_number">전화번호</div>
-        <div id="phone_number_field">
-            {{form.phone_number}}
-        </div>
-    </div>  
-    <input id="submit_btn" type="submit" value="확인">
-        {% if messages %}
-            {% for message in messages %}
-                {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
-            {% endfor %}
-        {% endif %}
-</form>
-</div> 
+      <div id="phone_number_section">
+        <div id="phone_number">전화번호를 입력해주세요</div>
+        <div id="phone_number_field">{{form.phone_number}}</div>
+      </div>
+      <input id="submit_btn" type="submit" value="확인" />
+      {% if messages %} {% for message in messages %} {% if message.tags %}
+      <script>
+        alert("{{ message }}");
+      </script>
+      {% endif %} {% endfor %} {% endif %}
+    </form>
+  </div>
+</div>
 
 {% endblock contents %}
-    
-

@@ -115,6 +115,12 @@ a {
   height: 100%;
 }
 
+.main_container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
 .navbar_wrap {
   display: flex;
   justify-content: flex-start;
@@ -174,6 +180,16 @@ a {
 .banner_titlewrap {
   color: #ffffff;
   padding-top: 171px;
+}
+
+.banner_subtitle {
+  font-size: 20px;
+  font-family: SFProDisplay;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 20px;
 }
 
 .banner_maintitle {
@@ -305,7 +321,17 @@ a {
   }
 
   .banner_maintitle {
-    font-size: 5.8vw;
+    font-size: 10vw;
+  }
+
+  /* main banner title을 위한 클래스 */
+  .banner_maintitle.formain {
+    font-size: 6vw;
+  }
+
+  /* application banner title을 위한 클래스 */
+  .banner_maintitle.forapplication {
+    font-size: 7.5vw;
   }
 
   .main_footer {
