@@ -39,12 +39,11 @@ class ApplyForm(forms.ModelForm):
         ("friends", "지인의 소개"),
         ("others", "기타"),
     )
-    participate_check = forms.ChoiceField(
-        choices=YES_NO, widget=forms.RadioSelect)
+    participate_check = forms.ChoiceField(choices=YES_NO, widget=forms.RadioSelect)
     workshop_check = forms.ChoiceField(choices=YES_NO, widget=forms.RadioSelect)
-    info_check = forms.ChoiceField(choices=YES_NO, widget=forms.RadioSelect)
+    info_check = forms.ChoiceField(choices=AGREE_NOR, widget=forms.RadioSelect)
     know_check = forms.ChoiceField(choices=KNOW_ROOT, widget=forms.RadioSelect)
-    deposit_check = forms.ChoiceField(choices=YES_NO, widget=forms.RadioSelect)
+    deposit_check = forms.ChoiceField(choices=AGREE_NOR, widget=forms.RadioSelect)
     sub_major_semester = forms.ChoiceField(choices=SEMESTER, required=False, widget=forms.RadioSelect)
     major_grade = forms.ChoiceField(choices=GRADE, widget=forms.RadioSelect)
     sub_major = forms.CharField(required=False)
@@ -70,32 +69,32 @@ class ApplyForm(forms.ModelForm):
         "answer5",
         "code",
         "know_check")
-        labels = {
-            "participate_check":"일정 참여 여부", 
-        "workshop_check":"워크샵 참여 여부", 
-        "info_check" : "개인정보 이용동의", 
-        "deposit_check" : "보증금 납부 동의", 
-        "name" : "이름", 
-        "school" : "학교", 
-        "major" : "전공 학과", 
-        "major_grade" : "학년", 
-        "sub_major" : "부전공", 
-        "sub_major_semester" : "부전공 이수 학기",
-        "address" : "거주지",
-        "phone_number" : "휴대폰 번호",
-        "avail_meeting_time" : "면접 가능 시간대",
-        "answer1":"",
-        "answer2":"",
-        "answer3":"",
-        "answer4":"",
-        "answer5":"",
-        "code":"코드 입력란",
-        "know_check":"피로그래밍 알게 된 경로",
-        }
+        # labels = {
+        #     "participate_check":"일정 참여 여부", 
+        # "workshop_check":"워크샵 참여 여부", 
+        # "info_check" : "개인정보 이용동의", 
+        # "deposit_check" : "보증금 납부 동의", 
+        # "name" : "이름", 
+        # "school" : "학교", 
+        # "major" : "전공 학과", 
+        # "major_grade" : "학년", 
+        # "sub_major" : "부전공", 
+        # "sub_major_semester" : "부전공 이수 학기",
+        # "address" : "거주지",
+        # "phone_number" : "휴대폰 번호",
+        # "avail_meeting_time" : "면접 가능 시간대",
+        # "answer1":"",
+        # "answer2":"",
+        # "answer3":"",
+        # "answer4":"",
+        # "answer5":"",
+        # "code":"코드 입력란",
+        # "know_check":"피로그래밍 알게 된 경로",
+        # }
         # widgets={
-        #     'participate_check':forms.RadioSelect,
-        #     'workshop_check':forms.RadioSelect,
-        #     'info_check':forms.RadioSelect,
+        #     # 'participate_check':forms.RadioSelect,
+        #     #'workshop_check':forms.RadioSelect,
+        #     #'info_check':forms.RadioSelect,
         #     'major_grade':forms.RadioSelect,
         #     'sub_major_semester':forms.RadioSelect,
         #     'know_check':forms.RadioSelect,
@@ -106,7 +105,7 @@ class ApplyForm(forms.ModelForm):
         print(sub_major)
         if sub_major == '':
             print("claen 확인!")
-            return ""
+            return ''
         else :
             print("raw 확인!")
             return sub_major
