@@ -1,0 +1,10 @@
+username = doadmin
+password = **************** show
+host = pirogramming-homepage-do-user-8762303-0.b.db.ondigitalocean.com
+port = 25060
+database = defaultdb
+sslmode = require
+
+
+# Using PostgreSQL extension pg_restore
+PGPASSWORD=k1nqordnuy6brcxy pg_restore -U doadmin -h pirogramming-homepage-do-user-8762303-0.b.db.ondigitalocean.com -p 25060 -d defaultdb 

@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -21,12 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7n(q$)5z6!81)1_4op1m8v#jlk5n!ibp3yply%&o8mve%5%@7v'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG"))
 
-ALLOWED_HOSTS = []
+print(DEBUG)
+
+
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +49,7 @@ INSTALLED_APPS = [
     'apply',
     'main',
     'gallery',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -80,12 +88,27 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if DEBUG:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': os.environ.get("POSTGRESQL_HOST"),
+            'NAME': os.environ.get('POSTGRESQL_DBNAME'),
+            "USER": os.environ.get("POSTGRESQL_USER"),
+            'PASSWORD': os.environ.get("POSTGRESQL_PASSWORD"),
+            'PORT': os.environ.get("POSTGRESQL_PORT"),
+        }
+    }
+
 
 
 # Password validation
@@ -135,3 +158,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = "config.custom_storages.MediaStorage"
+    STATICFILES_STORAGE = "config.custom_storages.StaticStorage"
+
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    # print(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    # print(AWS_SECRET_ACCESS_KEY)
+    AWS_STORAGE_BUCKET_NAME = "pirogramming"
+    AWS_AUTO_CREATE_BUCKET = True
+    AWS_DEFAULT_ACL = "public-read"
+    AWS_S3_REGION_NAME = "sfo3"
+    AWS_S3_ENDPOINT_URL = f"https://{AWS_S3_REGION_NAME}.digitaloceanspaces.com"
+
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_REGION_NAME}.digitaloceanspaces.com"
+
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+    print(STATIC_URL)
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"

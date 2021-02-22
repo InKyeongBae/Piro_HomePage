@@ -1,0 +1,462 @@
+.black_background {
+  height: 171px;
+  background-color: #151515;
+}
+
+.black_background span {
+  visibility: hidden;
+}
+
+/* main_intro */
+.intro_content_wrap {
+  margin-top: 80px;
+  font-family: "Noto Sans KR";
+  font-size: 18px;
+  line-height: 1.6rem;
+}
+
+.intro_content_1 {
+  margin-bottom: 30px;
+}
+
+.keyword {
+  font-family: Druk Wide Bold;
+  font-size: 18px;
+}
+
+/* main_desc */
+.desc_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 62px;
+}
+
+.desc_item {
+  width: 303px;
+}
+
+.desc_img {
+  width: 303px;
+  height: 202px;
+  object-fit: cover;
+}
+.default_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.desc_img_default {
+  width: 202px;
+  height: 202px;
+}
+
+.desc_title {
+  font-family: "Noto Sans KR";
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 30px;
+}
+
+.desc_content {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  /* font-weight: bold; */
+}
+
+/* main_plan */
+.main_plan {
+  background-color: #2d2d2d;
+}
+.plan_wrap {
+  padding-top: 83px;
+  padding-bottom: 160px;
+  text-align: center;
+}
+
+.plan_wrap > .banner_title {
+  color: #4dff53;
+}
+
+.plan_content {
+  padding-top: 123px;
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+}
+.progress_bar {
+  height: 15px;
+  background-color: #3e3e3e;
+}
+
+.points {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: -50%;
+}
+
+.plan_point {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.steps {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 56px;
+}
+
+.step_wrap {
+  width: 33%;
+}
+
+.step_content {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.step_wrap:first-child .step_content {
+  margin-left: 0;
+}
+.step_wrap:last-child .step_content {
+  margin-right: 0;
+}
+
+.step_title {
+  font-family: "Noto Sans KR";
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+.step_month {
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* main_repo */
+.main_repo {
+  background-color: #151515;
+}
+
+.repo_wrap {
+  padding-top: 83px;
+  padding-bottom: 125px;
+  text-align: center;
+}
+
+.repo_wrap > .banner_title {
+  color: #4dff53;
+}
+.repo_content {
+  padding-top: 72px;
+  margin: 0 auto;
+}
+.repo_image {
+  width: 230px;
+  height: 200px;
+  filter: drop-shadow(0px 0px 5px rgba(0, 255, 21, 0.74));
+}
+
+/* main_company */
+.main_company {
+  height: auto;
+  background-color: #f1f1f1;
+}
+
+.intro_wrap,
+.company_wrap,
+.interview_wrap {
+  padding-top: 83px;
+  padding-bottom: 120px;
+  text-align: center;
+}
+
+.banner_title {
+  font-family: Druk Wide Bold;
+  font-size: 26px;
+}
+
+.company_images {
+  padding-top: 80px;
+  /* padding: 80px 160px 0 160px; */
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
+
+/* 집토스 로고 */
+.four.column.row:first-child .company_imagewrap:nth-child(3) .company_image {
+  width: 200px;
+}
+/* 매스프레소 로고 */
+.four.column.row:first-child .company_imagewrap:nth-child(4) .company_image {
+  padding-bottom: 25px;
+}
+/* skt 로고 */
+.four.column.row:nth-child(2) .company_imagewrap:nth-child(4) .company_image {
+  padding-bottom: 30px;
+}
+
+/* 플레이리스트 로고 */
+.four.column.row:nth-child(3) .company_imagewrap:nth-child(3) .company_image {
+  width: 50px;
+}
+
+/* 어니스트펀드 로고 */
+.four.column.row:nth-child(3) .company_imagewrap:nth-child(4) .company_image {
+  width: 210px;
+}
+
+.company_image {
+  width: 150px;
+  height: 100px;
+}
+
+/* main_interview */
+.main_interview {
+  background-color: #151515;
+}
+.interview_wrap > .banner_title {
+  color: #4dff53;
+}
+.interview_images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 80px;
+}
+.interview_item {
+  width: 220px;
+  height: 220px;
+}
+.interview_imagewrap {
+  position: relative;
+}
+.interview_imagewrap:hover .caption {
+  opacity: 1;
+}
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.45s ease-in-out;
+  -moz-transition: all 0.45s ease-in-out;
+  -o-transition: all 0.45s ease-in-out;
+  -ms-transition: all 0.45s ease-in-out;
+  transition: all 0.45s ease-in-out;
+}
+.blur {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 220px;
+  height: 224px;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 2px;
+}
+.caption_text {
+  z-index: 10;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.more_btn {
+  color: #fff;
+  width: 200px;
+  height: 48px;
+  padding: 10px 48px 10px;
+  border: solid 1px #979797;
+  font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.more_btn:hover {
+  transition-duration: 0.8s;
+  color: #4dff53;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  .black_background {
+    display: none;
+  }
+  .banner_subtitle {
+    /* font-size:10px; */
+    font-size: 2vw;
+  }
+  .banner_title {
+    font-size: 4.5vw;
+  }
+
+  /* main_intro */
+  .intro_wrap > .content_wrap {
+    margin-top: 2.5vh;
+  }
+
+  /* main_desc */
+  .desc_wrap {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    align-items: center;
+  }
+  .desc_item {
+    margin-bottom: 6vh;
+  }
+  .desc_img {
+    width: 100%;
+    object-fit: cover;
+    /* height: auto; */
+  }
+  .desc_img_default {
+    width: 40vw;
+    height: 40vw;
+    margin-bottom: 3vh;
+  }
+  .desc_title {
+    margin-top: 0px;
+    margin-bottom: 1vh;
+  }
+
+  /* main_plan */
+  .plan_wrap {
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+  }
+
+  .plan_content {
+    padding-top: 4vh;
+  }
+  .progress_bar {
+    height: 3vw;
+  }
+
+  .plan_point {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .step_title {
+    font-size: 3.5vw;
+  }
+  .step_month {
+    font-size: 2vw;
+  }
+
+  /* main_repo */
+  .repo_content {
+    padding-top: 2.5vh;
+  }
+
+  .repo_image {
+    width: 30vw;
+    height: 25vw;
+    filter: drop-shadow(0px 0px 1vw rgba(0, 255, 21, 0.74));
+  }
+
+  /* main_company */
+  .main_company {
+    /* height: 40vh; */
+    height: auto;
+  }
+
+  .repo_wrap,
+  .company_wrap {
+    padding-top: 6vh;
+    padding-bottom: 3vh;
+  }
+
+  .company_images,
+  .interview_images {
+    padding-top: 2.5vh;
+  }
+
+  .four.column.row:first-child {
+    padding-bottom: 0;
+  }
+
+  .four.column.row:not(:first-child) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -3vh;
+  }
+
+  .company_image {
+    width: 12vw;
+    /* width: 50px; */
+  }
+
+  /* 스노우 로고 */
+  .four.column.row:first-child .company_imagewrap:first-child .company_image {
+    width: 9vw;
+  }
+
+  /* 콴다 로고 */
+  .four.column.row:first-child .company_imagewrap:nth-child(2) .company_image {
+    width: 9.5vw;
+  }
+
+  /* 매스프레소 로고 */
+  .four.column.row:first-child .company_imagewrap:nth-child(4) .company_image {
+    padding-bottom: 0;
+  }
+  /* skt 로고 */
+  .four.column.row:nth-child(2) .company_imagewrap:nth-child(4) .company_image {
+    padding-bottom: 1.5vh;
+  }
+
+  /* 집토스 로고 */
+  .four.column.row:first-child .company_imagewrap:nth-child(3) .company_image {
+    /* width: 14vh; */
+  }
+
+  /* 플레이리스트 로고 */
+  .four.column.row:nth-child(3) .company_imagewrap:nth-child(3) .company_image {
+    width: 4.5vw;
+  }
+
+  /* main_interview */
+  .interview_wrap {
+    padding-top: 6vh;
+    padding-bottom: 10vh;
+  }
+  .interview_images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .interview_imagewrap {
+    margin-bottom: 4vh;
+  }
+  .more_btn {
+    margin-top: 0vh;
+    width: 40vw;
+    height: 10vw;
+    padding: 2vw 5vw 2vw;
+  }
+}
