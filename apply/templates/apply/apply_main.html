@@ -15,12 +15,20 @@
   </div>
   <div id="btn_section">
     {% if status == 'doc' %}
+    
+        {% if doc_info != '' %}
+        <div id="doc_info">
+            {{doc_info}}
+        </div>
+        {% endif %}
+        
+    
     <a id="a_section" href="{% url 'apply:application' %}">
       <div id="apply">지원하기</div>
     </a>
     {% endif %} {% if status == 'doc_result_waiting' %}
     <div id="doc_waiting_info1">서류 전형 지원 기간이 마감되었습니다.</div>
-    <div id="doc_wating_info2">
+    <div id="doc_waiting_info2">
       서류 전형 합격자 발표일시는 {{notify_date.month}}월 {{notify_date.day}}일
       {{notify_date.hour}}시 {{notify_date.minute}}분입니다
     </div>
@@ -29,7 +37,7 @@
       <div id="btn">지원 상태 확인</div>
     </a>
     {% endif %} {% if status == 'doc_result' %}
-    <div id="btn">서류전형 합격 조회</div>
+    <a id="a_section" href="{% url 'apply:result' 'doc' %}"><div id="btn">서류전형 합격 조회</div></a>
     {% endif %} {% if status == 'final_result_waiting' %}
     <div id="final_waiting_info1">피로그래밍에 대한 많은 관심 감사드립니다</div>
     <div id="final_wating_info2">
@@ -37,7 +45,7 @@
       {{notify_date.hour}}시 {{notify_date.minute}}분입니다
     </div>
     {% endif %} {% if status == 'final' %}
-    <div id="btn">최종 합격 조회</div>
+    <a id="a_section" href="{% url 'apply:result' 'final' %}"><div id="btn">최종 합격 조회</div></a>
     {% endif %}
   </div>
 </div>

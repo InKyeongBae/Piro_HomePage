@@ -46,18 +46,23 @@ def main(request):
         return redirect(reverse('main:main_page'))
 
     print(img)
-
+    doc_info = season.doc_screening_info
     ctx = {
         'number' : number,
         'img' : img,
         'status' : status,
         'notify_date' : notify_date,
+        'doc_info' : doc_info,
     }
     return render(request, 'apply/apply_main.html', ctx)
     
 def apply(request):
     try:
         season = Season.objects.order_by('-created_at').first()
+        if season is None:
+            msg = "모집 중인 기수가 없습니다"
+            messages.error(request, msg)
+            return redirect(reverse('main:main_page'))
     except ObjectDoesNotExist:
         msg = "모집 중인 기수가 없습니다"
         messages.error(request, msg)
@@ -105,6 +110,10 @@ def apply(request):
 def applyConfirm(request):
     try:
         season = Season.objects.order_by('-created_at').first()
+        if season is None:
+            msg = "모집 중인 기수가 없습니다"
+            messages.error(request, msg)
+            return redirect(reverse('main:main_page'))
     except ObjectDoesNotExist:
         msg = "모집 중인 기수가 없습니다"
         messages.error(request, msg)
@@ -112,7 +121,7 @@ def applyConfirm(request):
     print("왔다")
     now = timezone.now()
 
-    if now<season.doc_screening_start or now>=season.doc_result_start:
+    if  now<season.doc_screening_start or now>=season.doc_result_start:
         msg = "지금은 지원 기간이 아닙니다!"
         messages.error(request,msg)
         return redirect(reverse('apply:main'))

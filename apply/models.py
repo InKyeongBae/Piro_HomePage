@@ -4,7 +4,7 @@ from django.db import models
 
 class Season(models.Model):
     season_num = models.IntegerField(verbose_name="모집 기수")
-    poster = models.ImageField(upload_to="season/poster", verbose_name="모집 포스터")
+    poster = models.ImageField(upload_to="season/poster", verbose_name="모집 포스터", help_text="포스터는 가로 3.2 세로 1의 비율로 제작해주시기 바랍니다")
 
     session_start_date = models.DateField(verbose_name="세션 시작일")
     session_end_date = models.DateField(verbose_name="세션 종료일")
@@ -14,7 +14,7 @@ class Season(models.Model):
     meeting_date2 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 2")
     meeting_date3 = models.DateField(null=True, blank=True, verbose_name="면접 후보일 3")
 
-    doc_screening_info = models.TextField(verbose_name="서류전형 관련 추가 안내", null=True, blank=True)
+    doc_screening_info = models.TextField(verbose_name="서류전형 관련 추가 안내", null=True, blank=True, help_text="join us 페이지 메인 포스터 밑에 배치됩니다. 서류전형 추가 전달 사항을 한 줄로 짧게 입력해주세요. 긴급 전달 사항도 가능!")
     doc_screening_start = models.DateTimeField(verbose_name="서류전형 지원 시작일시")
     doc_screening_end = models.DateTimeField(verbose_name="서류전형 지원 마감일시")
 
@@ -23,7 +23,7 @@ class Season(models.Model):
     question3 = models.TextField(verbose_name="서류전형 문제3")
     question4 = models.TextField(verbose_name="서류전형 문제4")
     question5 = models.TextField(verbose_name="서류전형 문제5")
-    coding_test = models.TextField(verbose_name="코딩테스트 문제")
+    coding_test = models.TextField(verbose_name="코딩테스트 문제", help_text="코딩테스트 보조 사진들은 apply-images 모델에 보여질 순서대로 추가해주세요")
     
     doc_meeting_info = models.TextField(verbose_name="면접전형 관련 추가 안내", null=True, blank=True, help_text="서류전형 결과 발표 페이지 하단에 들어갑니다. 면접관련 추가 전달 사항을 입력해주세요")
     doc_result_start = models.DateTimeField(verbose_name="서류전형 결과 발표 시작일시")
@@ -66,14 +66,7 @@ class Applicant(models.Model):
         ("대학원생", "대학원생"),
     )
 
-    SEMESTER = (
-        (1, "1학기"),
-        (2, "2학기"),
-        (3, "3학기"),
-        (4, "4학기"),
-        (5, "5학기"),
-        (6, "6학기"),
-    )
+
 
     YES_NO = (
         ("예", "예"),
@@ -103,8 +96,8 @@ class Applicant(models.Model):
     school = models.CharField(max_length=20, verbose_name="학교")
     major = models.CharField(max_length=20, verbose_name="전공")
     major_grade = models.CharField(max_length=10, choices=GRADE, verbose_name="전공 학년")
-    sub_major = models.CharField(max_length=20, null=True, blank=True, verbose_name="부전공")
-    sub_major_semester = models.IntegerField(null=True, blank=True, choices=SEMESTER, verbose_name="부전공 이수 학기")
+    sub_major = models.CharField(max_length=20, null=True, blank=True, default="없음", verbose_name="부전공")
+    sub_major_semester = models.IntegerField(null=True, blank=True, verbose_name="부전공 이수 학기")
     address = models.CharField(max_length=100, verbose_name="거주지")
     phone_number = models.CharField(max_length=15, verbose_name="전화번호")
 

@@ -30,6 +30,12 @@
   height: 25vw;
 }
 
+#doc_info{
+  width:80vw;
+  margin-bottom:2rem;
+  text-align: center;
+}
+
 #btn_section {
   display: flex;
   flex-direction: column;
@@ -67,4 +73,22 @@
   width: 15rem;
   height: 3.5rem;
   margin-top: 2.2rem;
+}
+
+#doc_waiting_info1{
+  font-size : 1.5rem;
+  margin-bottom:1rem;
+}
+
+#doc_waiting_info2{
+  font-size : 1.2rem;
+}
+
+#final_waiting_info1{
+  font-size : 1.5rem;
+  margin-bottom:1rem;
+}
+
+#final_waiting_info2{
+  font-size : 1.2rem;
 }
