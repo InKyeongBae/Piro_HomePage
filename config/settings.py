@@ -150,11 +150,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    STATIC_DIR,
-    os.path.join(BASE_DIR,'main','static')
-]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    STATIC_DIR
+]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -167,13 +167,11 @@ if not DEBUG:
     # print(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
     # print(AWS_SECRET_ACCESS_KEY)
-    AWS_STORAGE_BUCKET_NAME = "pirogramming"
+    AWS_STORAGE_BUCKET_NAME = "pirogramming-bucket"
     AWS_AUTO_CREATE_BUCKET = True
     AWS_DEFAULT_ACL = "public-read"
-    AWS_S3_REGION_NAME = "sfo3"
-    AWS_S3_ENDPOINT_URL = f"https://{AWS_S3_REGION_NAME}.digitaloceanspaces.com"
 
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.{AWS_S3_REGION_NAME}.digitaloceanspaces.com"
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
     print(STATIC_URL)
