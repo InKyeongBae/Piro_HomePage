@@ -52,7 +52,7 @@ class CustomImageAdmin(admin.ModelAdmin):
 
 @admin.register(models.Applicant)
 class CustomImageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'get_season_num', 'school', 'phone_number', 'doc_pass', 'final_pass')
+    list_display = ('name', 'get_season_num', 'school', 'phone_number', 'doc_pass', 'meeting_date_time', 'final_pass')
     list_filter = ('season__season_num', 'doc_pass', 'final_pass', 'school', 'major_grade')
     search_fields = ['name', 'school', 'season__season_num']
     fieldsets = (
