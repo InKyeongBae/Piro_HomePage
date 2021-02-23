@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.entire_wrap {
+  padding-top: 80px;
+  overflow: auto;
+}
+
+.active {
+  border-bottom: 3px solid #ffffff;
+}
+
+.sidebar_icon {
+  padding-bottom: 35px;
+}
+
+/* 이스터에그 */
+.modalContent_wrap {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.modalContent_wrap:not(:first-child) {
+  margin-top: 20px;
+}
+
+.modalContent_wrap:first-child .modalContent_image,
+.modalContent_wrap:nth-child(2) .modalContent_image {
+  height: 200px;
+}
+
+.modalContent_wrap:nth-child(4) .modalContent_image {
+  height: 212px;
+}
+
+.modalContent_wrap:last-child .modalContent_image {
+  height: 223px;
+}
+
+.modalContent_imagewrap {
+  display: inline-block;
+}
+
+.modalContent_image {
+  width: 175px;
+  height: 100%;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.modalContent_description {
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.piro_namewrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.piro_github a {
+  color: #000000;
+}
+
+.piro_github a:hover {
+  color: #000000;
+}
+
+.xi-github.xi-2x {
+  display: none;
+}
+
+.piro_name {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Noto Sans KR";
+  /* margin-bottom: 20px; */
+}
+
+.piro_detailDesc {
+  font-family: "Noto Sans KR";
+}
+
+/* 이스터에그 css 끝 */
+
+.main_navbar {
+  background-color: #131415;
+  color: white;
+  width: 100%;
+  height: 80px;
+  /* height: 9vh; */
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.main_container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.navbar_wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar_logo {
+  display: inline-block;
+  width: 74px;
+  height: 74px;
+  margin: 3px 86px 3px 0;
+}
+
+.navbar_logo a {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar_menulist {
+  display: inline-block;
+}
+
+.navbar_menu {
+  display: inline-block;
+  color: white;
+  /* width: 53px; */
+  height: 80px;
+  line-height: 80px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.navbar_menu:hover {
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
+}
+
+.navbar_menu:not(:last-of-type) {
+  margin-right: 71px;
+}
+
+.logo_img {
+  width: 100%;
+}
+
+.main_content {
+  min-width: 1280px;
+}
+
+.main_banner {
+  height: 329px;
+  background-color: #151515;
+}
+
+.banner_titlewrap {
+  color: #ffffff;
+  padding-top: 171px;
+}
+
+.banner_subtitle {
+  font-size: 20px;
+  font-family: SFProDisplay;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+}
+
+.banner_maintitle {
+  font-size: 60px;
+  font-family: Druk Wide Bold;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.menu_icon {
+  display: none;
+}
+
+.main_footer {
+  min-width: 1280px;
+  background: #2f2f2f;
+  height: 130px;
+  /* height: 14vh; */
+  color: #ababab;
+}
+
+.footer_menulist {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_mobileMenulist {
+  display: none;
+}
+
+.footer_menu {
+  color: #ababab;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.footer_menu:hover {
+  /* color: #ababab; */
+  color: #ffffff;
+}
+
+.footer_menu:nth-child(3) {
+  min-width: 138px;
+}
+
+.footer_menu:nth-child(4) {
+  min-width: 126px;
+}
+
+.footer_menu:nth-child(5) {
+  min-width: 272px;
+}
+
+.footer_menuicon {
+  margin-right: 3px;
+}
+
+.footer_mobileMenu {
+  color: #ababab;
+  display: flex;
+  align-items: center;
+}
+
+.footer_mobileMenu:hover {
+  /* color: #ababab; */
+  color: #ffffff;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  /* 이스터에그 */
+
+  .modalContent_imagewrap {
+    display: inline-block;
+  }
+
+  .modalContent_image {
+    min-width: 150px;
+    width: 27vw;
+  }
+
+  .modalContent_description {
+    /* min-width: 170px; */
+    margin-left: 3vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .piro_name {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+
+  .piro_detailDesc {
+    font-size: 2vw;
+  }
+  /* 이스터에그 css 종료 */
+
+  .navbar_wrap {
+    justify-content: space-between;
+  }
+  .navbar_menulist {
+    display: none;
+  }
+  .menu_icon {
+    display: inline-block;
+  }
+  .menu_icon:hover {
+    cursor: pointer;
+  }
+
+  .main_banner {
+    /* height: 30vh; */
+    height: 27vh;
+  }
+
+  .banner_titlewrap {
+    padding-top: 10vh;
+  }
+  .main_content {
+    min-width: 0;
+  }
+
+  .banner_maintitle {
+    font-size: 10vw;
+  }
+
+  /* main banner title을 위한 클래스 */
+  .banner_maintitle.formain {
+    font-size: 6vw;
+  }
+
+  /* application banner title을 위한 클래스 */
+  .banner_maintitle.forapplication {
+    font-size: 7.5vw;
+  }
+
+  .main_footer {
+    min-width: 0;
+  }
+  .footer_menulist {
+    display: none;
+  }
+  .footer_mobileMenulist {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Easter Egg에서 사용되는 깃허브 아이콘을 위한 미디어 쿼리 */
+@media screen and (max-width: 550px) {
+  .xi-github.xi-3x {
+    display: none;
+  }
+  .xi-github.xi-2x {
+    display: inline-block;
+  }
+}

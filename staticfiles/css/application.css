@@ -1,0 +1,166 @@
+/* #application_container {
+  text-align: left;
+} */
+
+.form_container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+#qna_section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3vw;
+}
+
+#sub_title {
+  text-align: left !important;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 45px;
+}
+#number {
+  font-family: SpoqaHanSans;
+  font-size: 35px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #00e800;
+  margin-right: 3vw;
+  text-align: left;
+}
+
+#qna {
+  width: 95%;
+}
+
+#qna > div:nth-child(1) {
+  font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-top: 7px;
+}
+
+#code_test_q {
+  font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-top: 35px;
+}
+
+#coding_test_img{
+    width:60vw;
+}
+
+#q {
+  margin-bottom: 35px;
+}
+
+#sub_q {
+  font-family: NotoSansKR;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 32px;
+}
+
+#meeting_times {
+  margin-bottom: 32px;
+}
+
+#input1 > input {
+  width: 386px;
+  height: 40px;
+  padding: 10px 265px 10px 15px;
+  background-color: #ffffff;
+}
+
+#text_input > textarea {
+  width: 90%;
+  height: 8vw;
+  padding: 10px;
+  font-family: NotoSansKR;
+  font-size: 17px;
+  line-height: 2rem;
+}
+
+#text_input_code > textarea {
+  width: 90%;
+  height: 20vw;
+  padding: 10px;
+  font-family: NotoSansKR;
+  font-size: 17px;
+  line-height: 2rem;
+}
+
+#last_check {
+  font-family: NotoSansKR;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+  padding-top: 7px;
+}
+#submit_section {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+
+#submit_section > input {
+  width: 15%;
+  height: 40px;
+  font-size: 18px;
+  padding: 20px auto;
+  font-weight: bold;
+  background-color: #00e800;
+}
+
+#submit_section > input:hover {
+  cursor: pointer;
+}
+
+/* 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  #sub_title {
+    font-size: 8vw;
+  }
+  #sub_q {
+    margin-bottom: 2vh;
+  }
+  #input1 input {
+    width: 90%;
+    height: 4vh;
+    padding: 2vw;
+  }
+  #submit_section input {
+    width: 100%;
+  }
+}
