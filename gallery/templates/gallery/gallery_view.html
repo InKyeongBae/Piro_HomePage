@@ -33,11 +33,11 @@
     </div>
     <div class="photo-generation">{{ photo.generation }}기</div>
   </a>
-  <div class="ui tiny modal photo_modals photo{{photo.pk}}">
+  <div class="ui small modal photo_modals photo{{photo.pk}}">
     <i class="close icon"></i>
     <div class="header">{{photo.generation}}기</div>
     <div class="image content">
-      <div class="ui medium image">
+      <div class="ui huge image">
         <img src="{{ photo.image.url }}" />
       </div>
       <div class="description">
@@ -54,7 +54,7 @@
 <script>
   const photoModals = document.querySelectorAll(".ui.modal.photo_modals");
   photoModals.forEach((item, index) => {
-    $(`.ui.tiny.modal.photo_modals.photo${index + 1}`).modal(
+    $(`.ui.small.modal.photo_modals.photo${index + 1}`).modal(
       "attach events",
       `.photo-box.photo-box${index + 1}`,
       "show"
