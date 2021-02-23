@@ -40,7 +40,7 @@ class Answer(Interviewee) :
     answer4 = models.TextField(null=True, blank=True, verbose_name="답변(내용) 4")
 
     class Meta : 
-        ordering = ['-generation']
+        ordering = ['-generation', 'id']
     
     
 
