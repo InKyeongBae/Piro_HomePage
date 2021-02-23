@@ -11,4 +11,4 @@ class Photo(models.Model) :
         return '{}.{}'.format(self.pk, self.description)
 
     class Meta : 
-        ordering = ['-generation']
+        ordering = ['-generation', 'id']
