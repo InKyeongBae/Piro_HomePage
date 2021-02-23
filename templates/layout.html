@@ -6,55 +6,154 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pirogramming.com" />
+    <meta property="og:title" content="피로그래밍 공식 페이지" />
+    <meta
+      property="og:description"
+      content="비전공자를 위한 웹 개발 동아리, 피로그래밍"
+    />
+    <meta
+      property="og:image"
+      content="https://pirogramming-bucket.s3.ap-northeast-2.amazonaws.com/static/images/logo.png"
+    />
 
     <!-- web font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- favicon option -->
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="{% static 'images/favicons/ms-icon-144x144.png' %}" />
+    <meta
+      name="msapplication-TileImage"
+      content="{% static 'images/favicons/ms-icon-144x144.png' %}"
+    />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/favicons/apple-icon-57x57.png' %}" />
-    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'images/favicons/apple-icon-60x60.png' %}" />
-    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicons/apple-icon-72x72.png' %}" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/favicons/apple-icon-76x76.png' %}" />
-    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicons/apple-icon-114x114.png' %}" />
-    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicons/apple-icon-120x120.png' %}" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/favicons/apple-icon-144x144.png' %}" />
-    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicons/apple-icon-152x152.png' %}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicons/apple-icon-180x180.png' %}" />
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicons/android-icon-192x192.png' %}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicons/favicon-32x32.png' %}" />
-    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicons/favicon-96x96.png' %}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicons/favicon-16x16.png' %}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="{% static 'images/favicons/apple-icon-57x57.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{% static 'images/favicons/apple-icon-60x60.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="{% static 'images/favicons/apple-icon-72x72.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{% static 'images/favicons/apple-icon-76x76.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="{% static 'images/favicons/apple-icon-114x114.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="{% static 'images/favicons/apple-icon-120x120.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="{% static 'images/favicons/apple-icon-144x144.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="{% static 'images/favicons/apple-icon-152x152.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'images/favicons/apple-icon-180x180.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'images/favicons/android-icon-192x192.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicons/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="{% static 'images/favicons/favicon-96x96.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'images/favicons/favicon-16x16.png' %}"
+    />
     <link rel="manifest" href="{% static 'images/favicons/manifest.json' %}" />
 
     <!-- fontAwesome icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
 
     <!-- semantic UI framework css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'semantic/semantic.min.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'semantic/semantic.min.css' %}"
+    />
 
     <!-- Xeicon -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
 
     <!-- Druk Wide Bold web font -->
-    <link href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold" rel="stylesheet" type="text/css" />
+    <link
+      href="//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
     {% block custom_style %} {% endblock %}
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- semantic UI framework javascript -->
     <script src="{% static 'semantic/semantic.min.js' %}"></script>
   </head>
   <body>
     <div class="ui right sidebar inverted vertical icon menu">
-      <a class="item" href="{% url 'main:main_page' %}"><i class="big home icon sidebar_icon"></i>Home</a>
-      <a class="item" href="{% url 'gallery:gallery_view' %}"><i class="big images icon sidebar_icon"></i>Gallery</a>
-      <a class="item" href="{% url 'interview:non_major_interview' %}"><i class="big user icon sidebar_icon"></i>Interview</a>
-      <a class="item" href="{% url 'apply:main'%}"><i class="big users icon sidebar_icon"></i>Join us</a>
+      <a class="item" href="{% url 'main:main_page' %}"
+        ><i class="big home icon sidebar_icon"></i>Home</a
+      >
+      <a class="item" href="{% url 'gallery:gallery_view' %}"
+        ><i class="big images icon sidebar_icon"></i>Gallery</a
+      >
+      <a class="item" href="{% url 'interview:non_major_interview' %}"
+        ><i class="big user icon sidebar_icon"></i>Interview</a
+      >
+      <a class="item" href="{% url 'apply:main'%}"
+        ><i class="big users icon sidebar_icon"></i>Join us</a
+      >
     </div>
     <div class="ui longer modal">
       <i class="close icon"></i>
@@ -62,59 +161,94 @@
       <div class="scrolling content">
         <div class="modalContent_wrap">
           <div class="modalContent_imagewrap">
-            <img class="modalContent_image" src="{% static 'images/piro13_inkyeong.jpeg' %}" alt="piro13" />
+            <img
+              class="modalContent_image"
+              src="{% static 'images/piro13_inkyeong.jpeg' %}"
+              alt="piro13"
+            />
           </div>
           <div class="modalContent_description">
             <div class="piro_namewrap">
               <div class="piro_name">배인경</div>
               <div class="piro_github">
-                <a href="https://github.com/InKyeongBae"><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i></a>
+                <a href="https://github.com/InKyeongBae"
+                  ><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i
+                ></a>
               </div>
             </div>
             <div class="piro_detailDesc">
               <div class="piro_school">소속: 중앙대학교 소프트웨어학과</div>
               <div class="piro_number">기수: 피로그래밍 13기 & 14기 운영진</div>
               <div class="piro_mygoal">좌우명: Carpe Diem</div>
-              <div class="piro_interest">관심있는 분야: Please refer to my GitHub README.md</div>
-              <div class="piro_like">좋아하는 것: 한강 따릉이 그리구 야경 보기, 와인, 여행, 페스티벌, 음악</div>
+              <div class="piro_interest">
+                관심있는 분야: Please refer to my GitHub README.md
+              </div>
+              <div class="piro_like">
+                좋아하는 것: 한강 따릉이 그리구 야경 보기, 와인, 여행, 페스티벌,
+                음악
+              </div>
               <div class="piro_dislike">싫어하는 것: COVID-19</div>
-              <div class="piro_personality">성격: I가 되고 싶고 J가 되고 싶은 "ESFP" ( 현실은 바깥 약속 세상 많은 집순이ㅇㅅㅇ )</div>
-              <div class="piro_comment">한마디: Easter egg 질문을 위해 생기부에나 적을 것들을 생각해보느라(?) 배고프당ㅎㅎ</div>
+              <div class="piro_personality">
+                성격: I가 되고 싶고 J가 되고 싶은 "ESFP" ( 현실은 바깥 약속 세상
+                많은 집순이ㅇㅅㅇ )
+              </div>
+              <div class="piro_comment">
+                한마디: Easter egg 질문을 위해 생기부에나 적을 것들을
+                생각해보느라(?) 배고프당ㅎㅎ
+              </div>
             </div>
           </div>
         </div>
         <div class="modalContent_wrap">
           <div class="modalContent_imagewrap">
-            <img class="modalContent_image" src="{% static 'images/piro13_wooyeong.jpeg' %}" alt="piro13" />
+            <img
+              class="modalContent_image"
+              src="{% static 'images/piro13_wooyeong.jpeg' %}"
+              alt="piro13"
+            />
           </div>
           <div class="modalContent_description">
             <div class="piro_namewrap">
               <div class="piro_name">김우영</div>
               <div class="piro_github">
-                <a href="https://github.com/w00ing"><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i></a>
+                <a href="https://github.com/w00ing"
+                  ><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i
+                ></a>
               </div>
             </div>
             <div class="piro_detailDesc">
               <div class="piro_school">소속: 서울대학교 경제학과 / 철학과</div>
               <div class="piro_number">기수: 피로그래밍 13기 & 14기 운영진</div>
               <div class="piro_mygoal">좌우명: 세상은 넓고 재밌는 건 많다</div>
-              <div class="piro_interest">관심있는 분야: 재밌고 배울 수 있는 것</div>
-              <div class="piro_like">좋아하는 것: 일로 갈리는것(...)과 안 자는 것(...)</div>
+              <div class="piro_interest">
+                관심있는 분야: 재밌고 배울 수 있는 것
+              </div>
+              <div class="piro_like">
+                좋아하는 것: 일로 갈리는것(...)과 안 자는 것(...)
+              </div>
               <div class="piro_dislike">싫어하는 것: 수면</div>
               <div class="piro_personality">성격: 수다쟁이</div>
-              <div class="piro_comment">한마디: 라고 하니까 생각났는데 제가 LA에 갔을 때 말이죠… (후략)</div>
+              <div class="piro_comment">
+                한마디: 라고 하니까 생각났는데 제가 LA에 갔을 때 말이죠… (후략)
+              </div>
             </div>
           </div>
         </div>
         <div class="modalContent_wrap">
           <div class="modalContent_imagewrap">
-            <img class="modalContent_image" src="{% static 'images/piro13_inji.jpg' %}" alt="piro13" />
+            <img
+              class="modalContent_image"
+              src="{% static 'images/piro13_inji.jpg' %}"
+              alt="piro13"
+            />
           </div>
           <div class="modalContent_description">
             <div class="piro_namewrap">
               <div class="piro_name">최인지</div>
               <div class="piro_github">
-                <a href="https://github.com/InjiChoi"><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i></a>
+                <a href="https://github.com/InjiChoi"
+                  ><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i
+                ></a>
               </div>
             </div>
             <div class="piro_detailDesc">
@@ -122,7 +256,9 @@
               <div class="piro_number">기수: 피로그래밍 13기 & 14기 운영진</div>
               <div class="piro_mygoal">좌우명: 일단 해보기</div>
               <div class="piro_interest">관심있는 분야: 장고장고</div>
-              <div class="piro_like">좋아하는 것: 고양이, 누워서 넷플릭스 보기</div>
+              <div class="piro_like">
+                좋아하는 것: 고양이, 누워서 넷플릭스 보기
+              </div>
               <div class="piro_dislike">싫어하는 것: 딱히 없음</div>
               <div class="piro_personality">성격: 둥글둥글 데굴데굴</div>
               <div class="piro_comment">한마디: 피로그래밍 쵝오❤️</div>
@@ -131,46 +267,76 @@
         </div>
         <div class="modalContent_wrap">
           <div class="modalContent_imagewrap">
-            <img class="modalContent_image" src="{% static 'images/piro13_kiyoon.jpeg' %}" alt="piro13" />
+            <img
+              class="modalContent_image"
+              src="{% static 'images/piro13_kiyoon.jpeg' %}"
+              alt="piro13"
+            />
           </div>
           <div class="modalContent_description">
             <div class="piro_namewrap">
               <div class="piro_name">김기윤</div>
               <div class="piro_github">
-                <a href="https://github.com/kimkiyun-95"><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i></a>
+                <a href="https://github.com/kimkiyun-95"
+                  ><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i
+                ></a>
               </div>
             </div>
             <div class="piro_detailDesc">
               <div class="piro_school">소속: 홍익대학교 컴퓨터공학과</div>
               <div class="piro_number">기수: 피로그래밍 13기 & 14기 운영진</div>
               <div class="piro_mygoal">좌우명: 좌우명 없는 게 좌우명</div>
-              <div class="piro_interest">관심있는 분야: 웹 개발 백엔드(Django, Spring)</div>
-              <div class="piro_like">좋아하는 것: 경치좋고 커피 좋고 산뜻한 카페(에서 코딩하는 것)</div>
+              <div class="piro_interest">
+                관심있는 분야: 웹 개발 백엔드(Django, Spring)
+              </div>
+              <div class="piro_like">
+                좋아하는 것: 경치좋고 커피 좋고 산뜻한 카페(에서 코딩하는 것)
+              </div>
               <div class="piro_dislike">싫어하는 것: 징그러운 으악</div>
-              <div class="piro_personality">성격: 낙천적이나 현실적이고 모순적인 성격</div>
-              <div class="piro_comment">한마디: 기획운영팀장하다가 14기 370명 지원해서 서류, 면접, 발표 준비하다 절레절레.... 내 손으로 지원/합격자 발표 시스템 만든다..! 아니 만들었다 두둥탁</div>
+              <div class="piro_personality">
+                성격: 낙천적이나 현실적이고 모순적인 성격
+              </div>
+              <div class="piro_comment">
+                한마디: 기획운영팀장하다가 14기 370명 지원해서 서류, 면접, 발표
+                준비하다 절레절레.... 내 손으로 지원/합격자 발표 시스템
+                만든다..! 아니 만들었다 두둥탁
+              </div>
             </div>
           </div>
         </div>
         <div class="modalContent_wrap">
           <div class="modalContent_imagewrap">
-            <img class="modalContent_image" src="{% static 'images/piro13_genie.jpeg' %}" alt="piro13" />
+            <img
+              class="modalContent_image"
+              src="{% static 'images/piro13_genie.jpeg' %}"
+              alt="piro13"
+            />
           </div>
           <div class="modalContent_description">
             <div class="piro_namewrap">
               <div class="piro_name">이진희</div>
               <div class="piro_github">
-                <a href="https://github.com/ZGenieZ"><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i></a>
+                <a href="https://github.com/ZGenieZ"
+                  ><i class="xi-github xi-3x"></i><i class="xi-github xi-2x"></i
+                ></a>
               </div>
             </div>
             <div class="piro_detailDesc">
               <div class="piro_school">소속: 경기대학교 컴퓨터공학부</div>
               <div class="piro_number">기수: 피로그래밍 13기 & 14기 운영진</div>
               <div class="piro_mygoal">좌우명: 항상 긍정적으로 생각하자</div>
-              <div class="piro_interest">관심있는 분야: <i class="xi-javascript xi-2x"></i>와 관련된 모든 것(React, nodejs 등등)</div>
-              <div class="piro_like">좋아하는 것: 음악 들으면서 코딩하기(Day6, 폴킴, 성시경 왕팬 😍), 맛있는 음식 먹기(회, 초밥, 콜드브루 진짜 좋아함)</div>
+              <div class="piro_interest">
+                관심있는 분야: <i class="xi-javascript xi-2x"></i>와 관련된 모든
+                것(React, nodejs 등등)
+              </div>
+              <div class="piro_like">
+                좋아하는 것: 음악 들으면서 코딩하기(Day6, 폴킴, 성시경 왕팬 😍),
+                맛있는 음식 먹기(회, 초밥, 콜드브루 진짜 좋아함)
+              </div>
               <div class="piro_dislike">싫어하는 것: 벌레</div>
-              <div class="piro_personality">성격: 긍정적이지만 코딩하다가 막히면 ... 🤬🤬</div>
+              <div class="piro_personality">
+                성격: 긍정적이지만 코딩하다가 막히면 ... 🤬🤬
+              </div>
               <div class="piro_comment">한마디: 졸려...</div>
             </div>
           </div>
@@ -183,12 +349,22 @@
           <div class="container">
             <div class="navbar_wrap">
               <div class="navbar_logo">
-                <a href="{% url 'main:main_page' %}"><img class="logo_img" src="{% static 'images/logo.png' %}" /> </a>
+                <a href="{% url 'main:main_page' %}"
+                  ><img class="logo_img" src="{% static 'images/logo.png' %}" />
+                </a>
               </div>
               <div class="navbar_menulist">
-                <a class="navbar_menu" href="{% url 'main:main_page' %}">Home</a>
-                <a class="navbar_menu" href="{% url 'gallery:gallery_view' %}">Gallery</a>
-                <a class="navbar_menu" href="{% url 'interview:non_major_interview' %}">Interview</a>
+                <a class="navbar_menu" href="{% url 'main:main_page' %}"
+                  >Home</a
+                >
+                <a class="navbar_menu" href="{% url 'gallery:gallery_view' %}"
+                  >Gallery</a
+                >
+                <a
+                  class="navbar_menu"
+                  href="{% url 'interview:non_major_interview' %}"
+                  >Interview</a
+                >
                 <a class="navbar_menu" href="{% url 'apply:main'%}">Join us</a>
               </div>
               <i class="fas fa-bars fa-2x menu_icon"></i>
@@ -201,7 +377,9 @@
               <div class="banner_wrap">
                 <div class="banner_titlewrap">
                   {% block subtitle %} {% endblock %}
-                  <div class="banner_maintitle">{% block titlename %} {% endblock %}</div>
+                  <div class="banner_maintitle">
+                    {% block titlename %} {% endblock %}
+                  </div>
                 </div>
               </div>
             </div>
@@ -211,19 +389,52 @@
         <div class="main_footer">
           <div class="container">
             <div class="footer_menulist">
-              <a class="footer_menu" href="https://www.instagram.com/pirogramming_official/"><i class="xi-instagram footer_menuicon"></i>Instagram</a>
-              <a class="footer_menu" href="https://ko-kr.facebook.com/p.rogramming3k/"><i class="xi-facebook-official footer_menuicon"></i>Facebook</a>
-              <a class="footer_menu" href="http://pf.kakao.com/_xdHxdXK"><i class="xi-kakaotalk footer_menuicon"></i>카카오톡 플러스친구</a>
-              <a class="footer_menu"><i class="xi-call footer_menuicon"></i>010-2122-7842 (14기 회장 김우영)</a>
-              <a class="footer_menu">© Pirogramming. 2021 All rights reserved </a>
+              <a
+                class="footer_menu"
+                href="https://www.instagram.com/pirogramming_official/"
+                ><i class="xi-instagram footer_menuicon"></i>Instagram</a
+              >
+              <a
+                class="footer_menu"
+                href="https://ko-kr.facebook.com/p.rogramming3k/"
+                ><i class="xi-facebook-official footer_menuicon"></i>Facebook</a
+              >
+              <a class="footer_menu" href="http://pf.kakao.com/_xdHxdXK"
+                ><i class="xi-kakaotalk footer_menuicon"></i>카카오톡
+                플러스친구</a
+              >
+              <a class="footer_menu"
+                ><i class="xi-call footer_menuicon"></i>010-2122-7842 (14기 회장
+                김우영)</a
+              >
+              <a class="footer_menu"
+                >© Pirogramming. 2021 All rights reserved
+              </a>
             </div>
             <!-- 모바일 전용 Footer menu-->
             <div class="footer_mobileMenulist">
-              <a class="footer_mobileMenu" data-inverted="" data-tooltip="Instagram" href="https://www.instagram.com/pirogramming_official/">
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="Instagram"
+                href="https://www.instagram.com/pirogramming_official/"
+              >
                 <i class="xi-instagram xi-2x"></i>
               </a>
-              <a class="footer_mobileMenu" data-inverted="" data-tooltip="Facebook" href="https://ko-kr.facebook.com/p.rogramming3k/"><i class="xi-facebook-official xi-2x"></i></a>
-              <a class="footer_mobileMenu" data-inverted="" data-tooltip="카카오톡 플러스친구" href="http://pf.kakao.com/_xdHxdXK"><i class="xi-kakaotalk xi-2x"></i></a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="Facebook"
+                href="https://ko-kr.facebook.com/p.rogramming3k/"
+                ><i class="xi-facebook-official xi-2x"></i
+              ></a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="카카오톡 플러스친구"
+                href="http://pf.kakao.com/_xdHxdXK"
+                ><i class="xi-kakaotalk xi-2x"></i
+              ></a>
               <a
                 class="footer_mobileMenu"
                 data-inverted=""
@@ -231,7 +442,13 @@
                 김우영)"
                 ><i class="xi-call xi-2x"></i
               ></a>
-              <a class="footer_mobileMenu" data-inverted="" data-tooltip="© Pirogramming. 2021 All rights reserved" data-position="top right"><i class="xi-copyright xi-2x"></i> </a>
+              <a
+                class="footer_mobileMenu"
+                data-inverted=""
+                data-tooltip="© Pirogramming. 2021 All rights reserved"
+                data-position="top right"
+                ><i class="xi-copyright xi-2x"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -245,7 +462,7 @@
 
       const init = () => {
         const initMenuActive = () => {
-          document.querySelectorAll(".navbar_menu").forEach((menu) => {
+          document.querySelectorAll(".navbar_menu").forEach(menu => {
             if (menu.classList.contains("active")) {
               menu.classList.remove("active");
             }
@@ -254,7 +471,7 @@
 
         const menuActive = () => {
           initMenuActive();
-          document.querySelectorAll(".navbar_menu").forEach((menu) => {
+          document.querySelectorAll(".navbar_menu").forEach(menu => {
             let menuname = menu.textContent.toLowerCase();
             if (menuname === "join us") {
               menuname = "apply";
