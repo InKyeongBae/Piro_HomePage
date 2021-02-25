@@ -18,7 +18,7 @@
 
 > 1) Category : All about, Plan, Repository, Pirogrammer's work, Review <br/>
 > 2) Mobile responsive implementation including nav-bar <br/>
-> > ![pirogramming com_ (1)](https://user-images.githubusercontent.com/65646971/109165707-349b8b80-77bf-11eb-9083-53ade6da5e0d.png)
+> > ![pirogramming com](https://user-images.githubusercontent.com/65646971/109168462-31ee6580-77c2-11eb-9a54-f772a0de2ea8.png)
 <br/>
 
 2) Gallery
@@ -47,6 +47,15 @@
 ### Easter-egg
 > When you type a word 'pirogramming' on a site, the developer's hidden Easter egg appears.
 
-
+## Developer & Designer
+Piro 13th
+|Name|Role|
+|---|---|
+|김기윤|Join Us|
+|김우영|Deploy|
+|배인경|Interview, Gallery, Page Composition Planning|
+|오채은|Design|
+|이진희|Setting layout, MainPage, Gallery|
+|최인지|MainPage, Page Composition Planning|
 
 
