@@ -31,6 +31,10 @@ class CustomSeasonAdmin(admin.ModelAdmin):
         (
             "최종 합격자 발표 관련",
             {"fields":("final_info", "final_result_open", "final_result_close", "workshop_date", "workshop_place")}
+        ),
+        (
+            "공개 여부",
+            {"fields":("is_public",)}
         )
 
     )

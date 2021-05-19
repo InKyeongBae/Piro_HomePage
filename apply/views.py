@@ -10,7 +10,7 @@ from django.contrib import messages
 def main(request):
 
     try:
-        season = Season.objects.order_by('-created_at').first()
+        season = Season.objects.filter(is_public = True).order_by('-created_at').first()
         print(season)
         if season is None:
             msg = "모집 중인 기수가 없습니다"

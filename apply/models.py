@@ -38,6 +38,7 @@ class Season(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_public = models.BooleanField(default=False, verbose_name="공개")
 
     def __str__(self):
         return f'{self.season_num}기 모집'
