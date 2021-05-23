@@ -202,7 +202,7 @@
               <a class="footer_menu" href="https://www.instagram.com/pirogramming_official/"><i class="xi-instagram footer_menuicon"></i>Instagram</a>
               <a class="footer_menu" href="https://ko-kr.facebook.com/p.rogramming3k/"><i class="xi-facebook-official footer_menuicon"></i>Facebook</a>
               <a class="footer_menu" href="http://pf.kakao.com/_xdHxdXK"><i class="xi-kakaotalk footer_menuicon"></i>카카오톡 플러스친구</a>
-              <a class="footer_menu"><i class="xi-call footer_menuicon"></i>010-2122-7842 (14기 회장 김우영)</a>
+              <a class="footer_menu"><i class="xi-call footer_menuicon"></i>010-5206-6328 (15기 회장 김서현)</a>
               <a class="footer_menu">© Pirogramming. 2021 All rights reserved </a>
             </div>
             <!-- 모바일 전용 Footer menu-->
@@ -212,13 +212,7 @@
               </a>
               <a class="footer_mobileMenu" data-inverted="" data-tooltip="Facebook" href="https://ko-kr.facebook.com/p.rogramming3k/"><i class="xi-facebook-official xi-2x"></i></a>
               <a class="footer_mobileMenu" data-inverted="" data-tooltip="카카오톡 플러스친구" href="http://pf.kakao.com/_xdHxdXK"><i class="xi-kakaotalk xi-2x"></i></a>
-              <a
-                class="footer_mobileMenu"
-                data-inverted=""
-                data-tooltip="010-2122-7842 (14기 회장
-                김우영)"
-                ><i class="xi-call xi-2x"></i
-              ></a>
+              <a class="footer_mobileMenu" data-inverted="" data-tooltip="010-5206-6328 (15기 회장 김서현)"><i class="xi-call xi-2x"></i></a>
               <a class="footer_mobileMenu" data-inverted="" data-tooltip="© Pirogramming. 2021 All rights reserved" data-position="top right"><i class="xi-copyright xi-2x"></i> </a>
             </div>
           </div>
@@ -232,7 +226,7 @@
       });
 
       const initMenuActive = () => {
-        document.querySelectorAll(".navbar_menu").forEach((menu) => {
+        document.querySelectorAll(".navbar_menu").forEach(menu => {
           if (menu.classList.contains("active")) {
             menu.classList.remove("active");
           }
@@ -241,7 +235,7 @@
 
       const menuActive = () => {
         initMenuActive();
-        document.querySelectorAll(".navbar_menu").forEach((menu) => {
+        document.querySelectorAll(".navbar_menu").forEach(menu => {
           let menuname = menu.textContent.toLowerCase();
           if (menuname === "join us") {
             menuname = "apply";
